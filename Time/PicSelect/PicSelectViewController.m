@@ -37,7 +37,7 @@
     [layout setScrollDirection:UICollectionViewScrollDirectionVertical];//设置其布局方向
     layout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);//设置其边界
     _myPicCollectionview = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) collectionViewLayout:layout];
-    _myPicCollectionview.backgroundColor = [UIColor yellowColor];
+    _myPicCollectionview.backgroundColor = [UIColor whiteColor];
     _myPicCollectionview.delegate = (id)self;
     _myPicCollectionview.dataSource = (id)self;
     [_myPicCollectionview registerClass:[PicCollectionViewCell class] forCellWithReuseIdentifier:cellNibName_PicCollectionViewCell];
@@ -49,14 +49,14 @@
     
     
     UIButton * videoButton =[UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [videoButton setFrame:CGRectMake(100,100, 100,100)];
+    [videoButton setFrame:CGRectMake(SCREEN_WIDTH / 6,100, 50,50)];
     [videoButton setTitle:@"合成"forState:UIControlStateNormal];
     [videoButton setBackgroundColor:[UIColor blackColor]];
     [videoButton addTarget:self action:@selector(process:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:videoButton];
     
     UIButton * puzzleButton =[UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [puzzleButton setFrame:CGRectMake(300,100, 100,100)];
+    [puzzleButton setFrame:CGRectMake(SCREEN_WIDTH / 6 + 60,100, 50,50)];
     [puzzleButton setTitle:@"拼图"forState:UIControlStateNormal];
     [puzzleButton setBackgroundColor:[UIColor blackColor]];
     [puzzleButton addTarget:self action:@selector(puzzleButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
@@ -210,10 +210,13 @@
     PicCollectionViewCell * cell = (PicCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
     if (cell.delButton.hidden) {
         cell.delButton.hidden = FALSE;
+        cell.picImageView.alpha = 0.5;
     }
     else
     {
         cell.delButton.hidden = TRUE;
+        cell.picImageView.alpha = 1.0;
+
     }
 
 }

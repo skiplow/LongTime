@@ -33,7 +33,7 @@
     [self setViewByImageFrame];
     
     UIButton * puzzleButton =[UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [puzzleButton setFrame:CGRectMake(300,100, 100,100)];
+    [puzzleButton setFrame:CGRectMake(SCREEN_WIDTH / 6,100, 50,50)];
     [puzzleButton setTitle:@"拼图"forState:UIControlStateNormal];
     [puzzleButton setBackgroundColor:[UIColor blackColor]];
     [puzzleButton addTarget:self action:@selector(puzzleButtonPressed:) forControlEvents:UIControlEventTouchUpInside];

@@ -10,23 +10,38 @@
 #import "FacePicker.h"
 #import "CCProgressView.h"
 #import "PicSelectViewController.h"
+#import "GIFImageView.h"
+#import "GIFImage.h"
+#import "Time_NacAnimation.h"
+#import "GlassBallView.h"
 #import <MediaPlayer/MediaPlayer.h>
 
 #include<AssetsLibrary/AssetsLibrary.h> 
 
-@interface TimeIndexViewController ()
+@interface TimeIndexViewController ()<UINavigationControllerDelegate>
 {
     int count;
     NSDate * newDate;
+    BOOL gifShow;
+    BOOL isDayTime;
 }
 //@property (strong, nonatomic) ALAssetsLibrary *MyAssetsLibrary;
 @property (strong, nonatomic) NSMutableArray * imagesurl;
 @property (strong, nonatomic) NSMutableArray * imageFrames;
 @property (strong, nonatomic) UIImageView * imageView;
 @property (strong, nonatomic) UIButton * showButton;
-@property (strong, nonatomic)CCProgressView * circleChart;
-@property (strong, nonatomic)UILabel * titleLabel;
+@property (strong, nonatomic) CCProgressView * circleChart;
+@property (strong, nonatomic) UILabel * titleLabel;
+@property (strong, nonatomic) GIFImageView * imageGifView;
+@property (strong, nonatomic) UIButton * startButton;
+@property (strong, nonatomic) UIButton * moreButton;
+@property (strong, nonatomic) GlassBallView * glassBallView;
+@property (strong, nonatomic) UILabel * timeLabel;
 
+@property (strong, nonatomic) PushTransition * pushAnimation;
+@property (strong, nonatomic) PopTransition  * popAnimation;
+@property (strong, nonatomic) InteractionTransitionAnimation * popInteraction;
+@property (strong, nonatomic) InteractiveTrasitionAnimation * popInteractive;
 @end
 
 @implementation TimeIndexViewController
@@ -34,16 +49,122 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.view setBackgroundColor:[UIColor whiteColor]];
+
+    
+
     self.title = @"Time";
     count = 0;
+    gifShow = FALSE;
+     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+
+    
+    /* 主页布局 */
+    
+    [self showCruntTime];
+    
+    _glassBallView = [[[NSBundle mainBundle] loadNibNamed:@"GlassBall" owner:self options:nil] lastObject];
+    [_glassBallView setFrame:CGRectMake(SCREEN_WIDTH / 2 - (177 / 2), SCREEN_HEIGHT / 2 - 190, 177, 190)];
+    if (isDayTime) {
+        [_glassBallView.BackGroundImage setImage:[UIImage imageNamed:@"BLQ"]];
+    }
+    else
+    {
+        [_glassBallView.BackGroundImage setImage:[UIImage imageNamed:@"BLQNight"]];
+
+    }
+    [_glassBallView startTimer];
+    [self.view addSubview:_glassBallView];
+    
+    _startButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH / 2 - 35, SCREEN_HEIGHT - 150, 70, 70)];
+    if (isDayTime) {
+        _startButton.backgroundColor = [UIColor colorWithRed:234/255.0f green:71/255.0f blue:79/255.0f alpha:1.0f];
+    }
+    else
+    {
+       _startButton.backgroundColor = [UIColor colorWithRed:142/255.0f green:44/255.0f blue:72/255.0f alpha:1.0f];
+    }
+    
+    _startButton.layer.cornerRadius = _startButton.frame.size.width / 2;
+    _startButton.layer.masksToBounds = YES;
+    [_startButton setTitle:@"开始" forState:UIControlStateNormal];
+    [_startButton setTitleColor:[UIColor colorWithRed:255/255.0f green:252/255.0f blue:231/255.0f alpha:1.0f] forState:UIControlStateNormal];
+    _startButton.titleLabel.font = [UIFont fontWithName:@"MarkerFelt-Wide" size:16];
+    [_startButton addTarget:self action:@selector(startPicHandle) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_startButton];
     
     
-    _showButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [_showButton setFrame:CGRectMake(50, 50, 100, 30)];
-    [_showButton setTitle:@"Get Images" forState:UIControlStateNormal];
-    [_showButton addTarget:self action:@selector(logImages) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_showButton];
+    /* 侧边栏按钮 */
+    _moreButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 25, 20, 20)];
+    if (isDayTime) {
+        [_moreButton setImage:[UIImage imageNamed:@"moreDay"] forState:UIControlStateNormal];
+    }
+    else
+    {
+        [_moreButton setImage:[UIImage imageNamed:@"moreNight"] forState:UIControlStateNormal];
+    }
+    [self.view addSubview:_moreButton];
+    
+    
+    if (isDayTime) {
+        [self.view setBackgroundColor:[UIColor colorWithRed:255/255.0f green:252/255.0f blue:231/255.0f alpha:1.0f]];
+    }
+    else{
+        [self.view setBackgroundColor:[UIColor colorWithRed:68/255.0f green:43/255.0f blue:59/255.0f alpha:1.0f]];
+    }
+    
+    //[self startPicHandle];
+}
+
+-(void) showCruntTime
+{
+    NSDate *now = [NSDate date];
+
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSUInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+    NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:now];
+
+    int year = (int)[dateComponent year];
+    int month = (int)[dateComponent month];
+    int day = (int)[dateComponent day];
+    int hour = (int)[dateComponent hour];
+    if (hour >= 6 && hour < 18) {
+        isDayTime = TRUE;
+    }
+    else{
+        isDayTime = FALSE;
+    }
+
+    NSString * timeString = [NSString stringWithFormat:@"%d 年 %d 月 %d 日",year,month,day];
+    
+    _timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH / 2 - (200 / 2), 20, 200, 30)];
+    _timeLabel.text = timeString;
+    if (isDayTime) {
+        _timeLabel.textColor = [UIColor colorWithRed:234/255.0f green:71/255.0f blue:79/255.0f alpha:1.0f];
+    }
+    else
+    {
+        _timeLabel.textColor = [UIColor colorWithRed:142/255.0f green:44/255.0f blue:72/255.0f alpha:1.0f];
+    }
+    
+    [_timeLabel setTextAlignment:NSTextAlignmentCenter];
+     [_timeLabel setFont:[UIFont fontWithName:@"MarkerFelt-Wide" size:16]];
+    [self.view addSubview:_timeLabel];
+
+    
+}
+
+/**
+ *  @author yj, 15-11-19 17:11:53
+ *
+ *  开始图片处理
+ */
+-(void) startPicHandle
+{
+    [_glassBallView stopTimer];
+    [_glassBallView removeFromSuperview];
+    [_startButton removeFromSuperview];
+    [_timeLabel removeFromSuperview];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height - 100)];
     [_imageView setContentMode:UIViewContentModeScaleAspectFill];
@@ -52,26 +173,28 @@
     
     _imageFrames = [[NSMutableArray alloc] init];
     
-    _circleChart = [[CCProgressView alloc] initWithFrame:CGRectMake(30, 100, 70,70)];
+    _circleChart = [[CCProgressView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)];
     _circleChart.backgroundColor = [UIColor clearColor];
-    _circleChart.center = CGPointMake(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
+    //_circleChart.center = CGPointMake(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
     [self.view addSubview:_circleChart];
     [_circleChart setProgress:0.0 animated:YES];
     
     _titleLabel=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, 60.0, 30.0)];
     [_titleLabel setTextAlignment:NSTextAlignmentCenter];
-    [_titleLabel setFont:[UIFont boldSystemFontOfSize:15.0f]];
-    [_titleLabel setTextColor:[UIColor whiteColor]];
-    //[_titleLabel setBackgroundColor:[UIColor redColor]];
+    [_titleLabel setFont:[UIFont boldSystemFontOfSize:16.0f]];
+    [_titleLabel setTextColor:[UIColor blackColor]];
     _titleLabel.center = CGPointMake(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
-    //_titleLabel.text = @"11";
     [self.view addSubview:_titleLabel];
     
     [self takepic];
-
-    
 }
 
+
+/**
+ *  @author yj, 15-11-19 16:11:44
+ *
+ *  从本地相册读取图片
+ */
 -(void) takepic
 {
     NSArray * tmpArry = [[NSUserDefaults standardUserDefaults] arrayForKey:personal_image];
@@ -82,10 +205,8 @@
         ALAssetsLibrary *assetLibrary=[[ALAssetsLibrary alloc] init];
         NSURL *url=[NSURL URLWithString:_imagesurl[_imagesurl.count - 1]];
         [assetLibrary assetForURL:url resultBlock:^(ALAsset *asset)  {
-            UIImage *image=[UIImage imageWithCGImage:asset.defaultRepresentation.fullScreenImage];
-            _imageView.image=image;
-            
-            //NSDictionary *metadata = asset.defaultRepresentation.metadata;
+            //UIImage *image=[UIImage imageWithCGImage:asset.defaultRepresentation.fullScreenImage];
+            //_imageView.image=image;
             newDate = [asset valueForProperty:ALAssetPropertyDate];
             NSLog(@"time = %@",newDate);
             [self doPickImage:newDate];
@@ -121,6 +242,12 @@
             [_circleChart setProgress:progress animated:YES];
             CGFloat tmpProgress = progress*100;
             _titleLabel.text=[NSString stringWithFormat:@"%.0f%%",tmpProgress];
+            if (tmpProgress > 50.0 && tmpProgress < 60.0 && gifShow == FALSE) {
+                _imageGifView = [[GIFImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH / 2 - 100 , SCREEN_HEIGHT - 200, 200, 150)];
+                [self.view addSubview:_imageGifView];
+                _imageGifView.image = [GIFImage imageNamed:@"whalespin.gif"];
+                gifShow = TRUE;
+            }
         });
         
     }  withCallbackBlock:^(BOOL success) {
@@ -134,53 +261,17 @@
         }
         /* 页面跳转 */
         dispatch_async(dispatch_get_main_queue(), ^{
-        PicSelectViewController * vc = [[PicSelectViewController alloc] init];
-        vc.imagesurl = _imagesurl;
-        [self.navigationController pushViewController:vc animated:YES];
-             });
+            PicSelectViewController * vc = [[PicSelectViewController alloc] init];
+            vc.imagesurl = _imagesurl;
+            [self.popInteraction writeToViewcontroller:vc];
+            [self.navigationController pushViewController:vc animated:YES];
+        });
         
     }];
 }
 
--(void) savePictoImageFrames
-{
-    for (int i = 0; i < _imagesurl.count; i++) {
-        ALAssetsLibrary *assetLibrary=[[ALAssetsLibrary alloc] init];
-        NSURL *url=[NSURL URLWithString:_imagesurl[i]];
-        [assetLibrary assetForURL:url resultBlock:^(ALAsset *asset)  {
-            UIImage *image= [[UIImage alloc] initWithCGImage:asset.defaultRepresentation.fullScreenImage];
-            if (image != nil) {
-                [_imageFrames addObject:image];
-            }
 
-            
-        }failureBlock:^(NSError *error) {
-            NSLog(@"error=%@",error);
-        }];
 
-    }
-}
-
-- (void)logImages
-{
-    
-    PicSelectViewController * vc = [[PicSelectViewController alloc] init];
-    vc.imagesurl = _imagesurl;
-    [self.navigationController pushViewController:vc animated:YES];
-}
-
-- (void)getImage:(NSString *)urlStr
-{
-    ALAssetsLibrary *assetLibrary=[[ALAssetsLibrary alloc] init];
-    NSURL *url=[NSURL URLWithString:urlStr];
-    [assetLibrary assetForURL:url resultBlock:^(ALAsset *asset)  {
-        UIImage *image=[UIImage imageWithCGImage:asset.defaultRepresentation.fullScreenImage];
-        _imageView.image=image;
-        
-    }failureBlock:^(NSError *error) {
-        NSLog(@"error=%@",error);
-    }];
-}
 
 - (void) doAnimationWithPic:(UIImage *) pic Time:(NSTimeInterval)time Point:(CGPoint)point
 {
@@ -208,14 +299,82 @@
     [super viewWillAppear:animated];
     
     [self.navigationController setNavigationBarHidden:YES animated:NO];
-    
-    
+    self.navigationController.delegate = self;
+    gifShow = FALSE;
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    _imageGifView = nil;
+    gifShow = FALSE;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+#pragma mark - **************** Navgation delegate
+/** 返回转场动画实例*/
+- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
+                                  animationControllerForOperation:(UINavigationControllerOperation)operation
+                                               fromViewController:(UIViewController *)fromVC
+                                                 toViewController:(UIViewController *)toVC
+{
+    if (operation == UINavigationControllerOperationPush) {
+        return self.pushAnimation;
+    }else if (operation == UINavigationControllerOperationPop){
+        return self.popAnimation;
+    }
+    return nil;
+}
+/** 返回交互手势实例
+-(id<UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController
+                        interactionControllerForAnimationController:(id<UIViewControllerAnimatedTransitioning>)animationController
+{
+    //    return self.popInteraction.isActing ? self.popInteraction : nil;
+    return self.popInteractive.isActing ? self.popInteractive : nil;
+}*/
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    NSLog(@"willShowViewController - %@",self.popInteraction.isActing ?@"YES":@"NO");
+}
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    NSLog(@"didShowViewController - %@",self.popInteraction.isActing ?@"YES":@"NO");
+}
+
+-(PushTransition *)pushAnimation
+{
+    if (!_pushAnimation) {
+        _pushAnimation = [[PushTransition alloc] init];
+    }
+    return _pushAnimation;
+}
+-(PopTransition *)popAnimation
+{
+    if (!_popAnimation) {
+        _popAnimation = [[PopTransition alloc] init];
+    }
+    return _popAnimation;
+}
+-(InteractionTransitionAnimation *)popInteraction
+{
+    if (!_popInteraction) {
+        _popInteraction = [[InteractionTransitionAnimation alloc] init];
+    }
+    return _popInteraction;
+}
+-(InteractiveTrasitionAnimation *)popInteractive
+{
+    if (!_popInteractive) {
+        _popInteractive = [[InteractiveTrasitionAnimation alloc] init];
+    }
+    return _popInteractive;
+}
+
 
 
 @end

@@ -57,21 +57,22 @@
         _lineWidth = [NSNumber numberWithFloat:10.0];
         UIBezierPath *circlePath = [UIBezierPath bezierPathWithArcCenter:CGPointMake(frame.size.width/2,frame.size.height/2) radius:self.frame.size.height * 0.5 startAngle:DEGREES_TO_RADIANS(startAngle) endAngle:DEGREES_TO_RADIANS(endAngle) clockwise:YES];
         
+        UIBezierPath *realCellArea = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         _circleBG             = [CAShapeLayer layer];
-        _circleBG.path        = circlePath.CGPath;
+        _circleBG.path        = realCellArea.CGPath;
         _circleBG.lineCap     = kCALineCapRound;
         _circleBG.fillColor   = [UIColor clearColor].CGColor;
         _circleBG.lineWidth   = [_lineWidth floatValue];
-        _circleBG.strokeColor = [UIColor grayColor].CGColor;
+        _circleBG.strokeColor = [UIColor lightGrayColor].CGColor;
         _circleBG.zPosition   = -1;
         
      
         [self.layer addSublayer:_circleBG];
         
         CAShapeLayer* maskLayer = [CAShapeLayer layer];
-        maskLayer.path = circlePath.CGPath;
+        maskLayer.path = realCellArea.CGPath;
         self.gradientLayer.mask = maskLayer;
-        self.gradientLayer.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:86/255.0f green:202/255.0f blue:139/255.0f alpha:1]CGColor],(id)[[UIColor lightGrayColor] CGColor], nil];
+        self.gradientLayer.colors = [NSArray arrayWithObjects:(id)[[UIColor clearColor]CGColor],(id)[[UIColor whiteColor] CGColor], nil];
         self.gradientLayer.locations = @[@0.f, @0.f];
         
         self.gradientLayer.startPoint =CGPointMake(0.5, 1);
@@ -89,7 +90,7 @@
     
     if (animated)
     {
-        NSTimeInterval duration = 0.5;
+        NSTimeInterval duration = 1.0;
         [UIView animateWithDuration:duration animations:^{
             CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"locations"];
             animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
@@ -106,18 +107,19 @@
     }
     
     self.gradientLayer.locations = newLocations;
-    a = 1.5;
-    b = 0;
-    jia = NO;
+//    a = 1.5;
+//    b = 0;
+//    jia = NO;
     _currentLinePointY = self.frame.size.height*(1-progress);
-    _currentWaterColor = [UIColor colorWithRed:86/255.0f green:202/255.0f blue:139/255.0f alpha:1];
+    _currentWaterColor = [UIColor colorWithRed:0/255.0f green:202/255.0f blue:194/255.0f alpha:1.0];
     //_currentLinePointY = 250;
-    if(_theTimer)
+    if(nil == _theTimer)
     {
-        [_theTimer invalidate];
-        _theTimer=nil;
+        //[_theTimer invalidate];
+        //_theTimer=nil;
+        _theTimer=[NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(animateWave) userInfo:nil repeats:YES];
     }
-     _theTimer=[NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(animateWave) userInfo:nil repeats:YES];
+
     
     
 }
@@ -130,7 +132,7 @@
     }
     
     
-    if (a<=1) {
+    if (a<=1.0) {
         jia = YES;
     }
     
