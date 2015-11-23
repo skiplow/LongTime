@@ -61,6 +61,8 @@
 		A0C21D841C02AC3C002F354A /* AMSlideMenuRightMenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C21D7B1C02AC3C002F354A /* AMSlideMenuRightMenuSegue.m */; };
 		A0C21D851C02AC3C002F354A /* AMSlideMenuRightTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C21D7D1C02AC3C002F354A /* AMSlideMenuRightTableViewController.m */; };
 		A0C21D861C02AC3C002F354A /* UIViewController+AMSlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C21D7F1C02AC3C002F354A /* UIViewController+AMSlideMenu.m */; };
+		A0C21D8A1C031C27002F354A /* ViedoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C21D891C031C27002F354A /* ViedoViewController.m */; };
+		A0C21D8E1C031CF2002F354A /* ResourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C21D8D1C031CF2002F354A /* ResourceViewController.m */; };
 		B08D954F9D7E4C3E463D51D5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA880D842952A35E18145FAF /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -180,6 +182,10 @@
 		A0C21D7D1C02AC3C002F354A /* AMSlideMenuRightTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuRightTableViewController.m; sourceTree = "<group>"; };
 		A0C21D7E1C02AC3C002F354A /* UIViewController+AMSlideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AMSlideMenu.h"; sourceTree = "<group>"; };
 		A0C21D7F1C02AC3C002F354A /* UIViewController+AMSlideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AMSlideMenu.m"; sourceTree = "<group>"; };
+		A0C21D881C031C27002F354A /* ViedoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViedoViewController.h; sourceTree = "<group>"; };
+		A0C21D891C031C27002F354A /* ViedoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViedoViewController.m; sourceTree = "<group>"; };
+		A0C21D8C1C031CF2002F354A /* ResourceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceViewController.h; sourceTree = "<group>"; };
+		A0C21D8D1C031CF2002F354A /* ResourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourceViewController.m; sourceTree = "<group>"; };
 		DA880D842952A35E18145FAF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -248,6 +254,8 @@
 		A01D86921BF2D9BE003B28A4 /* Time */ = {
 			isa = PBXGroup;
 			children = (
+				A0C21D8B1C031CE2002F354A /* ResourceView */,
+				A0C21D871C031C13002F354A /* VideoView */,
 				A09F19321C0070500046EC5C /* SlideMain */,
 				A09F18C71C004DE40046EC5C /* LeftMenu */,
 				A079E5721BFB21050021D502 /* Lib */,
@@ -469,6 +477,24 @@
 			path = AMSlideMenu;
 			sourceTree = "<group>";
 		};
+		A0C21D871C031C13002F354A /* VideoView */ = {
+			isa = PBXGroup;
+			children = (
+				A0C21D881C031C27002F354A /* ViedoViewController.h */,
+				A0C21D891C031C27002F354A /* ViedoViewController.m */,
+			);
+			path = VideoView;
+			sourceTree = "<group>";
+		};
+		A0C21D8B1C031CE2002F354A /* ResourceView */ = {
+			isa = PBXGroup;
+			children = (
+				A0C21D8C1C031CF2002F354A /* ResourceViewController.h */,
+				A0C21D8D1C031CF2002F354A /* ResourceViewController.m */,
+			);
+			path = ResourceView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -622,10 +648,12 @@
 				A01D869C1BF2D9BE003B28A4 /* Time.xcdatamodeld in Sources */,
 				A079E5571BF9BD2A0021D502 /* SDWebImageDownloader.m in Sources */,
 				A09F18C21BFEFA440046EC5C /* GlassBallView.m in Sources */,
+				A0C21D8E1C031CF2002F354A /* ResourceViewController.m in Sources */,
 				A079E5521BF9BD2A0021D502 /* MKAnnotationView+WebCache.m in Sources */,
 				A0BA713D1BFC6E800058D92F /* GIFImage.m in Sources */,
 				A079E5551BF9BD2A0021D502 /* SDWebImageCompat.m in Sources */,
 				A079E55A1BF9BD2A0021D502 /* SDWebImagePrefetcher.m in Sources */,
+				A0C21D8A1C031C27002F354A /* ViedoViewController.m in Sources */,
 				A0BA713E1BFC6E810058D92F /* GIFImageView.m in Sources */,
 				A079E5611BF9BD2A0021D502 /* UIView+WebCacheOperation.m in Sources */,
 				A0C21D861C02AC3C002F354A /* UIViewController+AMSlideMenu.m in Sources */,

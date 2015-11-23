@@ -180,7 +180,7 @@ static NSMutableArray *allInstances;
 
 - (CGFloat)leftMenuWidth
 {
-    return 250;
+    return 100;
 }
 
 - (CGFloat)rightMenuWidth

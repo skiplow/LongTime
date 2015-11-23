@@ -31,7 +31,7 @@
 {
     CGRect frame = button.frame;
     frame.origin = (CGPoint){0,0};
-    frame.size = (CGSize){25,25};
+    frame.size = (CGSize){20,20};
     button.frame = frame;
     
     [button setImage:[UIImage imageNamed:@"moreDay"] forState:UIControlStateNormal];
