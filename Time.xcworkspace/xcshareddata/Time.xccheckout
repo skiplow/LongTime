@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5AD75985-E579-461B-A95B-2EE9FBA1891C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Time</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>291860A4AA29705B8D1E7163A99117102588FE9D</key>
+		<string>https://github.com/skiplow/LongTime.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Time.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>291860A4AA29705B8D1E7163A99117102588FE9D</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/skiplow/LongTime.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>291860A4AA29705B8D1E7163A99117102588FE9D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>291860A4AA29705B8D1E7163A99117102588FE9D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>LongTime</string>
+		</dict>
+	</array>
+</dict>
+</plist>

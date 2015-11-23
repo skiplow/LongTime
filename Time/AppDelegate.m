@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "TimeIndexViewController.h"
+#import "MainViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,7 +19,7 @@
 {
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    TimeIndexViewController  *basicViewController = [TimeIndexViewController new];    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:basicViewController];
+    MainViewController  *basicViewController = [MainViewController new];    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:basicViewController];
     self.window.rootViewController = navigationController;
     return YES;
 }

@@ -14,6 +14,7 @@
 #import "GIFImage.h"
 #import "Time_NacAnimation.h"
 #import "GlassBallView.h"
+#import "LeftMenuTVC.h"
 #import <MediaPlayer/MediaPlayer.h>
 
 #include<AssetsLibrary/AssetsLibrary.h> 
@@ -46,20 +47,24 @@
 
 @implementation TimeIndexViewController
 
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
-    
-
-    self.title = @"Time";
+    //self.title = @"Time";
     count = 0;
     gifShow = FALSE;
-     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
 
-    
     /* 主页布局 */
-    
     [self showCruntTime];
     
     _glassBallView = [[[NSBundle mainBundle] loadNibNamed:@"GlassBall" owner:self options:nil] lastObject];
@@ -94,15 +99,15 @@
     
     
     /* 侧边栏按钮 */
-    _moreButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 25, 20, 20)];
-    if (isDayTime) {
-        [_moreButton setImage:[UIImage imageNamed:@"moreDay"] forState:UIControlStateNormal];
-    }
-    else
-    {
-        [_moreButton setImage:[UIImage imageNamed:@"moreNight"] forState:UIControlStateNormal];
-    }
-    [self.view addSubview:_moreButton];
+//    _moreButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 25, 20, 20)];
+//    if (isDayTime) {
+//        [_moreButton setImage:[UIImage imageNamed:@"moreDay"] forState:UIControlStateNormal];
+//    }
+//    else
+//    {
+//        [_moreButton setImage:[UIImage imageNamed:@"moreNight"] forState:UIControlStateNormal];
+//    }
+//    [self.view addSubview:_moreButton];
     
     
     if (isDayTime) {
@@ -136,20 +141,30 @@
 
     NSString * timeString = [NSString stringWithFormat:@"%d 年 %d 月 %d 日",year,month,day];
     
-    _timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH / 2 - (200 / 2), 20, 200, 30)];
-    _timeLabel.text = timeString;
+//    _timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH / 2 - (200 / 2), 20, 200, 30)];
+//    _timeLabel.text = timeString;
+//    if (isDayTime) {
+//        _timeLabel.textColor = [UIColor colorWithRed:234/255.0f green:71/255.0f blue:79/255.0f alpha:1.0f];
+//    }
+//    else
+//    {
+//        _timeLabel.textColor = [UIColor colorWithRed:142/255.0f green:44/255.0f blue:72/255.0f alpha:1.0f];
+//    }
+//    
+//    [_timeLabel setTextAlignment:NSTextAlignmentCenter];
+//     [_timeLabel setFont:[UIFont fontWithName:@"MarkerFelt-Wide" size:16]];
+//    [self.view addSubview:_timeLabel];
+
+    self.title = timeString;
+    //[self.titleLabel setTextAlignment:NSTextAlignmentCenter];
+    //[self.titleLabel setFont:[UIFont fontWithName:@"MarkerFelt-Wide" size:16]];
     if (isDayTime) {
-        _timeLabel.textColor = [UIColor colorWithRed:234/255.0f green:71/255.0f blue:79/255.0f alpha:1.0f];
+        [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"MarkerFelt-Wide" size:16],NSForegroundColorAttributeName:[UIColor colorWithRed:234/255.0f green:71/255.0f blue:79/255.0f alpha:1.0f]}];
     }
     else
     {
-        _timeLabel.textColor = [UIColor colorWithRed:142/255.0f green:44/255.0f blue:72/255.0f alpha:1.0f];
+        [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"MarkerFelt-Wide" size:16],NSForegroundColorAttributeName:[UIColor colorWithRed:142/255.0f green:44/255.0f blue:72/255.0f alpha:1.0f]}];
     }
-    
-    [_timeLabel setTextAlignment:NSTextAlignmentCenter];
-     [_timeLabel setFont:[UIFont fontWithName:@"MarkerFelt-Wide" size:16]];
-    [self.view addSubview:_timeLabel];
-
     
 }
 
@@ -298,7 +313,13 @@
 {
     [super viewWillAppear:animated];
     
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    //[self.navigationController setNavigationBarHidden:YES animated:NO];
+    
+    UIImage *image = [UIImage imageNamed:@"bg_clear"];
+    [self.navigationController.navigationBar setBackgroundImage:image
+                                                  forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:image];
+    
     self.navigationController.delegate = self;
     gifShow = FALSE;
 }
@@ -313,6 +334,23 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Overriding methods
+- (void)configureLeftMenuButton:(UIButton *)button
+{
+    CGRect frame = button.frame;
+    frame.origin = (CGPoint){0,0};
+    frame.size = (CGSize){40,40};
+    button.frame = frame;
+    
+    [button setImage:[UIImage imageNamed:@"moreDay"] forState:UIControlStateNormal];
+}
+
+- (BOOL)deepnessForLeftMenu
+{
+    return YES;
+}
+
 
 
 #pragma mark - **************** Navgation delegate

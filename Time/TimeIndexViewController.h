@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AMSlideMenuMainViewController.h"
 
-@interface TimeIndexViewController : UIViewController
+@interface TimeIndexViewController : AMSlideMenuMainViewController
 
 @end

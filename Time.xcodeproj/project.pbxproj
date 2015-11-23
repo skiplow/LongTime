@@ -40,6 +40,9 @@
 		A079E5711BFB20F00021D502 /* CEMovieMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = A079E5701BFB20F00021D502 /* CEMovieMaker.m */; };
 		A09F18C21BFEFA440046EC5C /* GlassBallView.m in Sources */ = {isa = PBXBuildFile; fileRef = A09F18C11BFEFA440046EC5C /* GlassBallView.m */; };
 		A09F18C41BFEFA5D0046EC5C /* GlassBall.xib in Resources */ = {isa = PBXBuildFile; fileRef = A09F18C31BFEFA5D0046EC5C /* GlassBall.xib */; };
+		A09F18CB1C004DE40046EC5C /* LeftMenuTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A09F18C91C004DE40046EC5C /* LeftMenuTVC.m */; };
+		A09F18CC1C004DE40046EC5C /* LeftMenuTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A09F18CA1C004DE40046EC5C /* LeftMenuTVC.xib */; };
+		A09F19351C0071D10046EC5C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A09F19341C0071D10046EC5C /* MainViewController.m */; };
 		A0B7C7631BF4DB5D003F7C48 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B7C7621BF4DB5D003F7C48 /* MediaPlayer.framework */; };
 		A0B7C7671BF57E13003F7C48 /* FacePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B7C7661BF57E13003F7C48 /* FacePicker.m */; };
 		A0B7C76B1BF5BFF8003F7C48 /* CCProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B7C76A1BF5BFF8003F7C48 /* CCProgressView.m */; };
@@ -51,6 +54,13 @@
 		A0BA714C1BFDC0850058D92F /* InteractiveTrasitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BA71451BFDC0850058D92F /* InteractiveTrasitionAnimation.m */; };
 		A0BA714D1BFDC0850058D92F /* PopTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BA71481BFDC0850058D92F /* PopTransition.m */; };
 		A0BA714E1BFDC0850058D92F /* PushTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BA714A1BFDC0850058D92F /* PushTransition.m */; };
+		A0C21D801C02AC3C002F354A /* AMSlideMenuContentSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C21D721C02AC3C002F354A /* AMSlideMenuContentSegue.m */; };
+		A0C21D811C02AC3C002F354A /* AMSlideMenuLeftMenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C21D741C02AC3C002F354A /* AMSlideMenuLeftMenuSegue.m */; };
+		A0C21D821C02AC3C002F354A /* AMSlideMenuLeftTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C21D761C02AC3C002F354A /* AMSlideMenuLeftTableViewController.m */; };
+		A0C21D831C02AC3C002F354A /* AMSlideMenuMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C21D781C02AC3C002F354A /* AMSlideMenuMainViewController.m */; };
+		A0C21D841C02AC3C002F354A /* AMSlideMenuRightMenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C21D7B1C02AC3C002F354A /* AMSlideMenuRightMenuSegue.m */; };
+		A0C21D851C02AC3C002F354A /* AMSlideMenuRightTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C21D7D1C02AC3C002F354A /* AMSlideMenuRightTableViewController.m */; };
+		A0C21D861C02AC3C002F354A /* UIViewController+AMSlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C21D7F1C02AC3C002F354A /* UIViewController+AMSlideMenu.m */; };
 		B08D954F9D7E4C3E463D51D5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA880D842952A35E18145FAF /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -128,6 +138,11 @@
 		A09F18C01BFEFA440046EC5C /* GlassBallView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlassBallView.h; sourceTree = "<group>"; };
 		A09F18C11BFEFA440046EC5C /* GlassBallView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlassBallView.m; sourceTree = "<group>"; };
 		A09F18C31BFEFA5D0046EC5C /* GlassBall.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GlassBall.xib; sourceTree = "<group>"; };
+		A09F18C81C004DE40046EC5C /* LeftMenuTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuTVC.h; sourceTree = "<group>"; };
+		A09F18C91C004DE40046EC5C /* LeftMenuTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuTVC.m; sourceTree = "<group>"; };
+		A09F18CA1C004DE40046EC5C /* LeftMenuTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftMenuTVC.xib; sourceTree = "<group>"; };
+		A09F19331C0071D10046EC5C /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		A09F19341C0071D10046EC5C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		A0B7C75B1BF46DF9003F7C48 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		A0B7C7621BF4DB5D003F7C48 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		A0B7C7651BF57E13003F7C48 /* FacePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacePicker.h; sourceTree = "<group>"; };
@@ -150,6 +165,21 @@
 		A0BA71481BFDC0850058D92F /* PopTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopTransition.m; sourceTree = "<group>"; };
 		A0BA71491BFDC0850058D92F /* PushTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushTransition.h; sourceTree = "<group>"; };
 		A0BA714A1BFDC0850058D92F /* PushTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushTransition.m; sourceTree = "<group>"; };
+		A0C21D711C02AC3C002F354A /* AMSlideMenuContentSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuContentSegue.h; sourceTree = "<group>"; };
+		A0C21D721C02AC3C002F354A /* AMSlideMenuContentSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuContentSegue.m; sourceTree = "<group>"; };
+		A0C21D731C02AC3C002F354A /* AMSlideMenuLeftMenuSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuLeftMenuSegue.h; sourceTree = "<group>"; };
+		A0C21D741C02AC3C002F354A /* AMSlideMenuLeftMenuSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuLeftMenuSegue.m; sourceTree = "<group>"; };
+		A0C21D751C02AC3C002F354A /* AMSlideMenuLeftTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuLeftTableViewController.h; sourceTree = "<group>"; };
+		A0C21D761C02AC3C002F354A /* AMSlideMenuLeftTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuLeftTableViewController.m; sourceTree = "<group>"; };
+		A0C21D771C02AC3C002F354A /* AMSlideMenuMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuMainViewController.h; sourceTree = "<group>"; };
+		A0C21D781C02AC3C002F354A /* AMSlideMenuMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuMainViewController.m; sourceTree = "<group>"; };
+		A0C21D791C02AC3C002F354A /* AMSlideMenuProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuProtocols.h; sourceTree = "<group>"; };
+		A0C21D7A1C02AC3C002F354A /* AMSlideMenuRightMenuSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuRightMenuSegue.h; sourceTree = "<group>"; };
+		A0C21D7B1C02AC3C002F354A /* AMSlideMenuRightMenuSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuRightMenuSegue.m; sourceTree = "<group>"; };
+		A0C21D7C1C02AC3C002F354A /* AMSlideMenuRightTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuRightTableViewController.h; sourceTree = "<group>"; };
+		A0C21D7D1C02AC3C002F354A /* AMSlideMenuRightTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuRightTableViewController.m; sourceTree = "<group>"; };
+		A0C21D7E1C02AC3C002F354A /* UIViewController+AMSlideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AMSlideMenu.h"; sourceTree = "<group>"; };
+		A0C21D7F1C02AC3C002F354A /* UIViewController+AMSlideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AMSlideMenu.m"; sourceTree = "<group>"; };
 		DA880D842952A35E18145FAF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -218,6 +248,8 @@
 		A01D86921BF2D9BE003B28A4 /* Time */ = {
 			isa = PBXGroup;
 			children = (
+				A09F19321C0070500046EC5C /* SlideMain */,
+				A09F18C71C004DE40046EC5C /* LeftMenu */,
 				A079E5721BFB21050021D502 /* Lib */,
 				A079E5651BFB07A80021D502 /* Puzzle */,
 				A0B7C76C1BF5D9D9003F7C48 /* PicSelect */,
@@ -329,6 +361,7 @@
 		A079E5721BFB21050021D502 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				A0C21D701C02AC3C002F354A /* AMSlideMenu */,
 				A0BA71411BFDC0850058D92F /* TransitionAnimaiton */,
 				A0BA71381BFC6E800058D92F /* GifImage */,
 				A0B7C7681BF5BFF8003F7C48 /* ccprogress */,
@@ -336,6 +369,25 @@
 				A079E56E1BFB20F00021D502 /* ViedoMaker */,
 			);
 			name = Lib;
+			sourceTree = "<group>";
+		};
+		A09F18C71C004DE40046EC5C /* LeftMenu */ = {
+			isa = PBXGroup;
+			children = (
+				A09F18C81C004DE40046EC5C /* LeftMenuTVC.h */,
+				A09F18C91C004DE40046EC5C /* LeftMenuTVC.m */,
+				A09F18CA1C004DE40046EC5C /* LeftMenuTVC.xib */,
+			);
+			path = LeftMenu;
+			sourceTree = "<group>";
+		};
+		A09F19321C0070500046EC5C /* SlideMain */ = {
+			isa = PBXGroup;
+			children = (
+				A09F19331C0071D10046EC5C /* MainViewController.h */,
+				A09F19341C0071D10046EC5C /* MainViewController.m */,
+			);
+			path = SlideMain;
 			sourceTree = "<group>";
 		};
 		A0B7C7641BF57C0F003F7C48 /* FacePicker */ = {
@@ -393,6 +445,28 @@
 				A0BA714A1BFDC0850058D92F /* PushTransition.m */,
 			);
 			path = TransitionAnimaiton;
+			sourceTree = "<group>";
+		};
+		A0C21D701C02AC3C002F354A /* AMSlideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				A0C21D711C02AC3C002F354A /* AMSlideMenuContentSegue.h */,
+				A0C21D721C02AC3C002F354A /* AMSlideMenuContentSegue.m */,
+				A0C21D731C02AC3C002F354A /* AMSlideMenuLeftMenuSegue.h */,
+				A0C21D741C02AC3C002F354A /* AMSlideMenuLeftMenuSegue.m */,
+				A0C21D751C02AC3C002F354A /* AMSlideMenuLeftTableViewController.h */,
+				A0C21D761C02AC3C002F354A /* AMSlideMenuLeftTableViewController.m */,
+				A0C21D771C02AC3C002F354A /* AMSlideMenuMainViewController.h */,
+				A0C21D781C02AC3C002F354A /* AMSlideMenuMainViewController.m */,
+				A0C21D791C02AC3C002F354A /* AMSlideMenuProtocols.h */,
+				A0C21D7A1C02AC3C002F354A /* AMSlideMenuRightMenuSegue.h */,
+				A0C21D7B1C02AC3C002F354A /* AMSlideMenuRightMenuSegue.m */,
+				A0C21D7C1C02AC3C002F354A /* AMSlideMenuRightTableViewController.h */,
+				A0C21D7D1C02AC3C002F354A /* AMSlideMenuRightTableViewController.m */,
+				A0C21D7E1C02AC3C002F354A /* UIViewController+AMSlideMenu.h */,
+				A0C21D7F1C02AC3C002F354A /* UIViewController+AMSlideMenu.m */,
+			);
+			path = AMSlideMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -479,6 +553,7 @@
 			files = (
 				A01D86A21BF2D9BE003B28A4 /* Main.storyboard in Resources */,
 				A079E4FD1BF9788D0021D502 /* PicCollectionViewCell.xib in Resources */,
+				A09F18CC1C004DE40046EC5C /* LeftMenuTVC.xib in Resources */,
 				A0BA71401BFC6EA00058D92F /* whalespin.gif in Resources */,
 				A09F18C41BFEFA5D0046EC5C /* GlassBall.xib in Resources */,
 				A01D86A71BF2D9BE003B28A4 /* LaunchScreen.xib in Resources */,
@@ -538,9 +613,12 @@
 				A079E5601BF9BD2A0021D502 /* UIImageView+WebCache.m in Sources */,
 				A0B7C76B1BF5BFF8003F7C48 /* CCProgressView.m in Sources */,
 				A0BA714D1BFDC0850058D92F /* PopTransition.m in Sources */,
+				A0C21D841C02AC3C002F354A /* AMSlideMenuRightMenuSegue.m in Sources */,
 				A079E5581BF9BD2A0021D502 /* SDWebImageDownloaderOperation.m in Sources */,
+				A0C21D821C02AC3C002F354A /* AMSlideMenuLeftTableViewController.m in Sources */,
 				A079E5591BF9BD2A0021D502 /* SDWebImageManager.m in Sources */,
 				A0B7C7671BF57E13003F7C48 /* FacePicker.m in Sources */,
+				A0C21D811C02AC3C002F354A /* AMSlideMenuLeftMenuSegue.m in Sources */,
 				A01D869C1BF2D9BE003B28A4 /* Time.xcdatamodeld in Sources */,
 				A079E5571BF9BD2A0021D502 /* SDWebImageDownloader.m in Sources */,
 				A09F18C21BFEFA440046EC5C /* GlassBallView.m in Sources */,
@@ -550,10 +628,13 @@
 				A079E55A1BF9BD2A0021D502 /* SDWebImagePrefetcher.m in Sources */,
 				A0BA713E1BFC6E810058D92F /* GIFImageView.m in Sources */,
 				A079E5611BF9BD2A0021D502 /* UIView+WebCacheOperation.m in Sources */,
+				A0C21D861C02AC3C002F354A /* UIViewController+AMSlideMenu.m in Sources */,
 				A079E56B1BFB08500021D502 /* PuzzleViewController.m in Sources */,
 				A079E55D1BF9BD2A0021D502 /* UIImage+MultiFormat.m in Sources */,
+				A09F19351C0071D10046EC5C /* MainViewController.m in Sources */,
 				A01D86991BF2D9BE003B28A4 /* AppDelegate.m in Sources */,
 				A0BA714B1BFDC0850058D92F /* InteractionTransitionAnimation.m in Sources */,
+				A0C21D851C02AC3C002F354A /* AMSlideMenuRightTableViewController.m in Sources */,
 				A01D86BE1BF2D9E3003B28A4 /* TimeIndexViewController.m in Sources */,
 				A079E55B1BF9BD2A0021D502 /* UIButton+WebCache.m in Sources */,
 				A01D86961BF2D9BE003B28A4 /* main.m in Sources */,
@@ -564,7 +645,10 @@
 				A079E5681BFB07A80021D502 /* PuzzleImageEditView.m in Sources */,
 				A0B7C76F1BF5E02B003F7C48 /* PicSelectViewController.m in Sources */,
 				A079E55C1BF9BD2A0021D502 /* UIImage+GIF.m in Sources */,
+				A0C21D831C02AC3C002F354A /* AMSlideMenuMainViewController.m in Sources */,
 				A079E5531BF9BD2A0021D502 /* NSData+ImageContentType.m in Sources */,
+				A0C21D801C02AC3C002F354A /* AMSlideMenuContentSegue.m in Sources */,
+				A09F18CB1C004DE40046EC5C /* LeftMenuTVC.m in Sources */,
 				A079E55E1BF9BD2A0021D502 /* UIImage+WebP.m in Sources */,
 				A079E5711BFB20F00021D502 /* CEMovieMaker.m in Sources */,
 			);
