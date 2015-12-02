@@ -16,17 +16,21 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BYw-o5-lR1">
                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                     </imageView>
-                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMc-Dj-WTX">
-                        <rect key="frame" x="35" y="35" width="30" height="30"/>
-                        <state key="normal" backgroundImage="btn_tag_delete">
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMc-Dj-WTX">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        <state key="normal">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yes" translatesAutoresizingMaskIntoConstraints="NO" id="XzC-4N-vcu">
+                        <rect key="frame" x="62" y="62" width="30" height="30"/>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <size key="customSize" width="135" height="150"/>
             <connections>
+                <outlet property="choseImageView" destination="XzC-4N-vcu" id="WtD-QC-ytl"/>
                 <outlet property="delButton" destination="lMc-Dj-WTX" id="c2T-f3-hcN"/>
                 <outlet property="picImageView" destination="BYw-o5-lR1" id="UNv-5F-qv3"/>
             </connections>
@@ -34,6 +38,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="btn_tag_delete" width="40" height="40"/>
+        <image name="yes" width="100" height="100"/>
     </resources>
 </document>

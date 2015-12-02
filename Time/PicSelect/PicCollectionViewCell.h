@@ -12,5 +12,6 @@ static NSString * cellNibName_PicCollectionViewCell = @"PicCollectionViewCell";
 @interface PicCollectionViewCell : UICollectionViewCell
 @property (strong, nonatomic) IBOutlet UIImageView *picImageView;
 @property (strong, nonatomic) IBOutlet UIButton *delButton;
+@property (strong, nonatomic) IBOutlet UIImageView *choseImageView;
 
 @end

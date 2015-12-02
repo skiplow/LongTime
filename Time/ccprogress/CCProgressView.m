@@ -72,7 +72,7 @@
         CAShapeLayer* maskLayer = [CAShapeLayer layer];
         maskLayer.path = realCellArea.CGPath;
         self.gradientLayer.mask = maskLayer;
-        self.gradientLayer.colors = [NSArray arrayWithObjects:(id)[[UIColor clearColor]CGColor],(id)[[UIColor whiteColor] CGColor], nil];
+        self.gradientLayer.colors = [NSArray arrayWithObjects:(id)[[UIColor whiteColor]CGColor],(id)[[UIColor whiteColor] CGColor], nil];
         self.gradientLayer.locations = @[@0.f, @0.f];
         
         self.gradientLayer.startPoint =CGPointMake(0.5, 1);

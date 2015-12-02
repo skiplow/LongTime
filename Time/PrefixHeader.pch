@@ -21,6 +21,8 @@
 #ifdef __OBJC__
 
 #import "UIImageView+WebCache.h"
+#import "UIColor+Colors.h"
+#import "UIFont+Fonts.h"
 
 #endif
 

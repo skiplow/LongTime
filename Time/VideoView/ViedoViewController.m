@@ -19,6 +19,26 @@
     // Do any additional setup after loading the view.
 }
 
+-(void) viewWillAppear:(BOOL)animated
+{
+    
+    UIImage *image = [UIImage imageNamed:@"bg_clear"];
+    [self.navigationController.navigationBar setBackgroundImage:image
+                                                  forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:image];
+    [self.navigationItem setHidesBackButton:YES];
+    UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
+    temporaryBarButtonItem.image = [UIImage imageNamed:@"fanhui"];
+    temporaryBarButtonItem.target = self;
+    temporaryBarButtonItem.action = @selector(back_main);
+    self.navigationItem.leftBarButtonItem = temporaryBarButtonItem;
+}
+
+-(void) back_main
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

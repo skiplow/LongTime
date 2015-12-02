@@ -16,6 +16,10 @@
 		A01D86B31BF2D9BE003B28A4 /* TimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A01D86B21BF2D9BE003B28A4 /* TimeTests.m */; };
 		A01D86BE1BF2D9E3003B28A4 /* TimeIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01D86BD1BF2D9E3003B28A4 /* TimeIndexViewController.m */; };
 		A01D86C01BF2DB21003B28A4 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01D86BF1BF2DB21003B28A4 /* AssetsLibrary.framework */; };
+		A02DB18F1C0E99A200E8D85F /* DeleteView.m in Sources */ = {isa = PBXBuildFile; fileRef = A02DB18E1C0E99A200E8D85F /* DeleteView.m */; };
+		A02DB1971C0EEDE800E8D85F /* UIColor+Colors.m in Sources */ = {isa = PBXBuildFile; fileRef = A02DB1941C0EEDE800E8D85F /* UIColor+Colors.m */; };
+		A02DB1981C0EEDE800E8D85F /* UIFont+Fonts.m in Sources */ = {isa = PBXBuildFile; fileRef = A02DB1961C0EEDE800E8D85F /* UIFont+Fonts.m */; };
+		A02DB19C1C0EFABF00E8D85F /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = A02DB19B1C0EFABF00E8D85F /* ALAssetsLibrary+CustomPhotoAlbum.m */; };
 		A079E4FC1BF9788D0021D502 /* PicCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A079E4FA1BF9788D0021D502 /* PicCollectionViewCell.m */; };
 		A079E4FD1BF9788D0021D502 /* PicCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A079E4FB1BF9788D0021D502 /* PicCollectionViewCell.xib */; };
 		A079E5521BF9BD2A0021D502 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A079E5321BF9BD2A0021D502 /* MKAnnotationView+WebCache.m */; };
@@ -94,6 +98,14 @@
 		A01D86BC1BF2D9E3003B28A4 /* TimeIndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeIndexViewController.h; sourceTree = "<group>"; };
 		A01D86BD1BF2D9E3003B28A4 /* TimeIndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeIndexViewController.m; sourceTree = "<group>"; };
 		A01D86BF1BF2DB21003B28A4 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		A02DB18D1C0E99A100E8D85F /* DeleteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteView.h; sourceTree = "<group>"; };
+		A02DB18E1C0E99A200E8D85F /* DeleteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteView.m; sourceTree = "<group>"; };
+		A02DB1931C0EEDE800E8D85F /* UIColor+Colors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Colors.h"; sourceTree = "<group>"; };
+		A02DB1941C0EEDE800E8D85F /* UIColor+Colors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Colors.m"; sourceTree = "<group>"; };
+		A02DB1951C0EEDE800E8D85F /* UIFont+Fonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Fonts.h"; sourceTree = "<group>"; };
+		A02DB1961C0EEDE800E8D85F /* UIFont+Fonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Fonts.m"; sourceTree = "<group>"; };
+		A02DB19A1C0EFABF00E8D85F /* ALAssetsLibrary+CustomPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAssetsLibrary+CustomPhotoAlbum.h"; sourceTree = "<group>"; };
+		A02DB19B1C0EFABF00E8D85F /* ALAssetsLibrary+CustomPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAssetsLibrary+CustomPhotoAlbum.m"; sourceTree = "<group>"; };
 		A079E4F91BF9788D0021D502 /* PicCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PicCollectionViewCell.h; sourceTree = "<group>"; };
 		A079E4FA1BF9788D0021D502 /* PicCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PicCollectionViewCell.m; sourceTree = "<group>"; };
 		A079E4FB1BF9788D0021D502 /* PicCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PicCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -306,6 +318,26 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A02DB1921C0EEDE800E8D85F /* color */ = {
+			isa = PBXGroup;
+			children = (
+				A02DB1931C0EEDE800E8D85F /* UIColor+Colors.h */,
+				A02DB1941C0EEDE800E8D85F /* UIColor+Colors.m */,
+				A02DB1951C0EEDE800E8D85F /* UIFont+Fonts.h */,
+				A02DB1961C0EEDE800E8D85F /* UIFont+Fonts.m */,
+			);
+			path = color;
+			sourceTree = "<group>";
+		};
+		A02DB1991C0EFABF00E8D85F /* ALAssetsLibrary-CustomPhotoAlbum */ = {
+			isa = PBXGroup;
+			children = (
+				A02DB19A1C0EFABF00E8D85F /* ALAssetsLibrary+CustomPhotoAlbum.h */,
+				A02DB19B1C0EFABF00E8D85F /* ALAssetsLibrary+CustomPhotoAlbum.m */,
+			);
+			path = "ALAssetsLibrary-CustomPhotoAlbum";
+			sourceTree = "<group>";
+		};
 		A079E5301BF9BD2A0021D502 /* SDWebImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,6 +401,8 @@
 		A079E5721BFB21050021D502 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				A02DB1991C0EFABF00E8D85F /* ALAssetsLibrary-CustomPhotoAlbum */,
+				A02DB1921C0EEDE800E8D85F /* color */,
 				A0C21D701C02AC3C002F354A /* AMSlideMenu */,
 				A0BA71411BFDC0850058D92F /* TransitionAnimaiton */,
 				A0BA71381BFC6E800058D92F /* GifImage */,
@@ -424,6 +458,8 @@
 				A079E4F91BF9788D0021D502 /* PicCollectionViewCell.h */,
 				A079E4FA1BF9788D0021D502 /* PicCollectionViewCell.m */,
 				A079E4FB1BF9788D0021D502 /* PicCollectionViewCell.xib */,
+				A02DB18D1C0E99A100E8D85F /* DeleteView.h */,
+				A02DB18E1C0E99A200E8D85F /* DeleteView.m */,
 			);
 			path = PicSelect;
 			sourceTree = "<group>";
@@ -634,6 +670,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A02DB19C1C0EFABF00E8D85F /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
 				A079E55F1BF9BD2A0021D502 /* UIImageView+HighlightedWebCache.m in Sources */,
 				A079E5561BF9BD2A0021D502 /* SDWebImageDecoder.m in Sources */,
 				A079E5601BF9BD2A0021D502 /* UIImageView+WebCache.m in Sources */,
@@ -659,6 +696,7 @@
 				A0C21D861C02AC3C002F354A /* UIViewController+AMSlideMenu.m in Sources */,
 				A079E56B1BFB08500021D502 /* PuzzleViewController.m in Sources */,
 				A079E55D1BF9BD2A0021D502 /* UIImage+MultiFormat.m in Sources */,
+				A02DB18F1C0E99A200E8D85F /* DeleteView.m in Sources */,
 				A09F19351C0071D10046EC5C /* MainViewController.m in Sources */,
 				A01D86991BF2D9BE003B28A4 /* AppDelegate.m in Sources */,
 				A0BA714B1BFDC0850058D92F /* InteractionTransitionAnimation.m in Sources */,
@@ -668,8 +706,10 @@
 				A01D86961BF2D9BE003B28A4 /* main.m in Sources */,
 				A0BA714C1BFDC0850058D92F /* InteractiveTrasitionAnimation.m in Sources */,
 				A079E5541BF9BD2A0021D502 /* SDImageCache.m in Sources */,
+				A02DB1981C0EEDE800E8D85F /* UIFont+Fonts.m in Sources */,
 				A0BA714E1BFDC0850058D92F /* PushTransition.m in Sources */,
 				A079E4FC1BF9788D0021D502 /* PicCollectionViewCell.m in Sources */,
+				A02DB1971C0EEDE800E8D85F /* UIColor+Colors.m in Sources */,
 				A079E5681BFB07A80021D502 /* PuzzleImageEditView.m in Sources */,
 				A0B7C76F1BF5E02B003F7C48 /* PicSelectViewController.m in Sources */,
 				A079E55C1BF9BD2A0021D502 /* UIImage+GIF.m in Sources */,
@@ -807,6 +847,7 @@
 			baseConfigurationReference = 32C7192E3C05ED2608B6C915 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = Time/PrefixHeader.pch;
 				INFOPLIST_FILE = Time/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -820,6 +861,7 @@
 			baseConfigurationReference = 3892C11DD73EE3A059F0505B /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = Time/PrefixHeader.pch;
 				INFOPLIST_FILE = Time/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

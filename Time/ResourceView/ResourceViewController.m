@@ -34,6 +34,7 @@
                                                   forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:image];
     
+    
 
 }
 

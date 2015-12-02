@@ -8,6 +8,7 @@
 
 #import "PuzzleViewController.h"
 #import "PuzzleImageEditView.h"
+#import "ALAssetsLibrary+CustomPhotoAlbum.h"
 #include<AssetsLibrary/AssetsLibrary.h>
 
 #define ROW_COUNT   2
@@ -21,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    
+    self.title = @"拼图";
 
     
     self.contentView =  [[UIScrollView alloc] initWithFrame:self.view.frame];
@@ -32,12 +33,40 @@
     
     [self setViewByImageFrame];
     
-    UIButton * puzzleButton =[UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [puzzleButton setFrame:CGRectMake(SCREEN_WIDTH / 6,100, 50,50)];
-    [puzzleButton setTitle:@"拼图"forState:UIControlStateNormal];
-    [puzzleButton setBackgroundColor:[UIColor blackColor]];
-    [puzzleButton addTarget:self action:@selector(puzzleButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:puzzleButton];
+//    UIButton * puzzleButton =[UIButton buttonWithType:UIButtonTypeRoundedRect];
+//    [puzzleButton setFrame:CGRectMake(SCREEN_WIDTH / 6,100, 50,50)];
+//    [puzzleButton setTitle:@"拼图"forState:UIControlStateNormal];
+//    [puzzleButton setBackgroundColor:[UIColor blackColor]];
+//    [puzzleButton addTarget:self action:@selector(puzzleButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:puzzleButton];
+}
+
+-(void) viewWillAppear:(BOOL)animated
+{
+    
+    UIImage *image = [UIImage imageNamed:@"bg_clear"];
+    [self.navigationController.navigationBar setBackgroundImage:image
+                                                  forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:image];
+    [self.navigationItem setHidesBackButton:YES];
+    UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
+    temporaryBarButtonItem.image = [UIImage imageNamed:@"fanhui"];
+    temporaryBarButtonItem.target = self;
+    temporaryBarButtonItem.action = @selector(back_main);
+    self.navigationItem.leftBarButtonItem = temporaryBarButtonItem;
+    
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, 24)];
+    [button setTitle:@"确认拼接" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor colorWithRed:234/255.0f green:71/255.0f blue:79/255.0f alpha:1.0f] forState:UIControlStateNormal];
+    [button.titleLabel setFont:[UIFont fontWithName:@"MarkerFelt-Wide" size:14]];
+    [button addTarget:self action:@selector(puzzleButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.rightBarButtonItem = barButton;
+}
+
+-(void) back_main
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /**
@@ -62,26 +91,48 @@
  */
 - (void)saveImageToPhotos:(UIImage*)savedImage
 {
-    UIImageWriteToSavedPhotosAlbum(savedImage, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
+//    UIImageWriteToSavedPhotosAlbum(savedImage, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
+    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+    [library saveImage:savedImage toAlbum:@"LongTime" completion:^(NSURL *assetURL, NSError *error) {
+        if (!error) {
+            NSLog(@"存储成功");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"保存图片结果提示"
+                                                            message:@"存储成功"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"确定"
+                                                  otherButtonTitles:nil];
+            [alert show];
+            
+        }
+    } failure:^(NSError *error) {
+        NSLog(@"存储失败");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"保存图片结果提示"
+                                                        message:@"存储失败"
+                                                       delegate:self
+                                              cancelButtonTitle:@"确定"
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+    }];
 }
 
 // 指定回调方法
 
-- (void)image: (UIImage *) image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo
-{
-    NSString *msg = nil ;
-    if(error != NULL){
-        msg = @"保存图片失败" ;
-    }else{
-        msg = @"保存图片成功" ;
-    }
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"保存图片结果提示"
-                                                    message:msg
-                                                   delegate:self
-                                          cancelButtonTitle:@"确定"
-                                          otherButtonTitles:nil];
-    [alert show];
-}
+//- (void)image: (UIImage *) image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo
+//{
+//    NSString *msg = nil ;
+//    if(error != NULL){
+//        msg = @"保存图片失败" ;
+//    }else{
+//        msg = @"保存图片成功" ;
+//    }
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"保存图片结果提示"
+//                                                    message:msg
+//                                                   delegate:self
+//                                          cancelButtonTitle:@"确定"
+//                                          otherButtonTitles:nil];
+//    [alert show];
+//}
 /**
  *  @author yj, 15-11-17 15:11:31
  *

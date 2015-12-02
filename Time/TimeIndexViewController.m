@@ -175,11 +175,11 @@
  */
 -(void) startPicHandle
 {
-    [_glassBallView stopTimer];
-    [_glassBallView removeFromSuperview];
-    [_startButton removeFromSuperview];
-    [_timeLabel removeFromSuperview];
-    self.view.backgroundColor = [UIColor whiteColor];
+//    [_glassBallView stopTimer];
+//    [_glassBallView removeFromSuperview];
+//    [_startButton removeFromSuperview];
+//    [_timeLabel removeFromSuperview];
+//    self.view.backgroundColor = [UIColor whiteColor];
     
     _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height - 100)];
     [_imageView setContentMode:UIViewContentModeScaleAspectFill];
@@ -326,8 +326,16 @@
 
 -(void)viewWillDisappear:(BOOL)animated
 {
+    _imageGifView.image = nil;
+    [_imageGifView removeFromSuperview];
     _imageGifView = nil;
     gifShow = FALSE;
+    [_circleChart removeFromSuperview];
+    _circleChart = nil;
+    [_titleLabel removeFromSuperview];
+    _titleLabel = nil;
+    [_imageView removeFromSuperview];
+    _imageView = nil;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -391,13 +399,13 @@
     }
     return _pushAnimation;
 }
--(PopTransition *)popAnimation
-{
-    if (!_popAnimation) {
-        _popAnimation = [[PopTransition alloc] init];
-    }
-    return _popAnimation;
-}
+//-(PopTransition *)popAnimation
+//{
+//    if (!_popAnimation) {
+//        _popAnimation = [[PopTransition alloc] init];
+//    }
+//    return _popAnimation;
+//}
 -(InteractionTransitionAnimation *)popInteraction
 {
     if (!_popInteraction) {
