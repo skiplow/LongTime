@@ -38,6 +38,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="yes" width="100" height="100"/>
+        <image name="yes" width="59" height="60"/>
     </resources>
 </document>

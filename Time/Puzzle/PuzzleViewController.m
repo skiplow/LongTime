@@ -44,10 +44,8 @@
 -(void) viewWillAppear:(BOOL)animated
 {
     
-    UIImage *image = [UIImage imageNamed:@"bg_clear"];
-    [self.navigationController.navigationBar setBackgroundImage:image
-                                                  forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setShadowImage:image];
+    [self.navigationController.navigationBar setBackgroundImage:[UIColor createImageWithColor:[UIColor whiteColor]] forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.translucent = YES; //从导航栏下开始计算高度
     [self.navigationItem setHidesBackButton:YES];
     UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
     temporaryBarButtonItem.image = [UIImage imageNamed:@"fanhui"];

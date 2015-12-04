@@ -13,9 +13,13 @@
 @interface DeleteView : UIView
 @property (strong, nonatomic) UIButton * delButton;
 @property (strong, nonatomic) UIButton * notFaceButton;
-@property (strong, nonatomic) UIButton * backGroundButton;
+@property (strong, nonatomic) UIButton * videoButton;
+@property (strong, nonatomic) UIButton * puzzleButton;
 
 @property (nonatomic, weak) id<DeleteViewDelegate> delegate;
+
+-(void) setDeleteMode;
+-(void) setFunctionMode;
 @end
 
 
@@ -23,5 +27,6 @@
 @optional
 -(void) deleteButtonPressed;
 -(void) notFaceButtonPressed;
--(void) dismissView;
+-(void) videoButtonPressed;
+-(void) puzzleButtonPressed;
 @end

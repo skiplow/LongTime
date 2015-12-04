@@ -128,7 +128,7 @@
         maskLayer.frame = _imageview.frame;
         self.layer.mask = maskLayer;
         
-        //[_contentView setZoomScale:0.2 animated:YES];
+        //[_contentView setZoomScale:1.0 animated:YES];
         
         [self setNeedsLayout];
         

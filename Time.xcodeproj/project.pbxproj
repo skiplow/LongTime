@@ -51,6 +51,12 @@
 		A0B7C7671BF57E13003F7C48 /* FacePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B7C7661BF57E13003F7C48 /* FacePicker.m */; };
 		A0B7C76B1BF5BFF8003F7C48 /* CCProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B7C76A1BF5BFF8003F7C48 /* CCProgressView.m */; };
 		A0B7C76F1BF5E02B003F7C48 /* PicSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B7C76E1BF5E02B003F7C48 /* PicSelectViewController.m */; };
+		A0BA03171C0FEFAD00F5D9DA /* ResourceCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BA03151C0FEFAD00F5D9DA /* ResourceCollectionViewCell.m */; };
+		A0BA03181C0FEFAD00F5D9DA /* ResourceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0BA03161C0FEFAD00F5D9DA /* ResourceCollectionViewCell.xib */; };
+		A0BA031A1C0FF17300F5D9DA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0BA03191C0FF17300F5D9DA /* AVFoundation.framework */; };
+		A0BA031C1C0FF17D00F5D9DA /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0BA031B1C0FF17D00F5D9DA /* CoreMedia.framework */; };
+		A0BA03201C1046EB00F5D9DA /* VIPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BA031F1C1046EB00F5D9DA /* VIPhotoView.m */; };
+		A0BA03231C10471900F5D9DA /* ImageShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BA03221C10471900F5D9DA /* ImageShowViewController.m */; };
 		A0BA713D1BFC6E800058D92F /* GIFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BA713A1BFC6E800058D92F /* GIFImage.m */; };
 		A0BA713E1BFC6E810058D92F /* GIFImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BA713C1BFC6E800058D92F /* GIFImageView.m */; };
 		A0BA71401BFC6EA00058D92F /* whalespin.gif in Resources */ = {isa = PBXBuildFile; fileRef = A0BA713F1BFC6EA00058D92F /* whalespin.gif */; };
@@ -67,6 +73,7 @@
 		A0C21D861C02AC3C002F354A /* UIViewController+AMSlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C21D7F1C02AC3C002F354A /* UIViewController+AMSlideMenu.m */; };
 		A0C21D8A1C031C27002F354A /* ViedoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C21D891C031C27002F354A /* ViedoViewController.m */; };
 		A0C21D8E1C031CF2002F354A /* ResourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C21D8D1C031CF2002F354A /* ResourceViewController.m */; };
+		A0C5FD4C1C11849300FC798A /* ResourceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C5FD4B1C11849300FC798A /* ResourceInfo.m */; };
 		B08D954F9D7E4C3E463D51D5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA880D842952A35E18145FAF /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -165,6 +172,15 @@
 		A0B7C76A1BF5BFF8003F7C48 /* CCProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCProgressView.m; sourceTree = "<group>"; };
 		A0B7C76D1BF5E02B003F7C48 /* PicSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PicSelectViewController.h; sourceTree = "<group>"; };
 		A0B7C76E1BF5E02B003F7C48 /* PicSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PicSelectViewController.m; sourceTree = "<group>"; };
+		A0BA03141C0FEFAD00F5D9DA /* ResourceCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceCollectionViewCell.h; sourceTree = "<group>"; };
+		A0BA03151C0FEFAD00F5D9DA /* ResourceCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourceCollectionViewCell.m; sourceTree = "<group>"; };
+		A0BA03161C0FEFAD00F5D9DA /* ResourceCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResourceCollectionViewCell.xib; sourceTree = "<group>"; };
+		A0BA03191C0FF17300F5D9DA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A0BA031B1C0FF17D00F5D9DA /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		A0BA031E1C1046EB00F5D9DA /* VIPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIPhotoView.h; sourceTree = "<group>"; };
+		A0BA031F1C1046EB00F5D9DA /* VIPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIPhotoView.m; sourceTree = "<group>"; };
+		A0BA03211C10471900F5D9DA /* ImageShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageShowViewController.h; sourceTree = "<group>"; };
+		A0BA03221C10471900F5D9DA /* ImageShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageShowViewController.m; sourceTree = "<group>"; };
 		A0BA71391BFC6E800058D92F /* GIFImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIFImage.h; sourceTree = "<group>"; };
 		A0BA713A1BFC6E800058D92F /* GIFImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIFImage.m; sourceTree = "<group>"; };
 		A0BA713B1BFC6E800058D92F /* GIFImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIFImageView.h; sourceTree = "<group>"; };
@@ -198,6 +214,8 @@
 		A0C21D891C031C27002F354A /* ViedoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViedoViewController.m; sourceTree = "<group>"; };
 		A0C21D8C1C031CF2002F354A /* ResourceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceViewController.h; sourceTree = "<group>"; };
 		A0C21D8D1C031CF2002F354A /* ResourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourceViewController.m; sourceTree = "<group>"; };
+		A0C5FD4A1C11849300FC798A /* ResourceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceInfo.h; sourceTree = "<group>"; };
+		A0C5FD4B1C11849300FC798A /* ResourceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourceInfo.m; sourceTree = "<group>"; };
 		DA880D842952A35E18145FAF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -206,6 +224,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0BA031C1C0FF17D00F5D9DA /* CoreMedia.framework in Frameworks */,
+				A0BA031A1C0FF17300F5D9DA /* AVFoundation.framework in Frameworks */,
 				A079E56D1BFB1E2C0021D502 /* CoreGraphics.framework in Frameworks */,
 				A0B7C7631BF4DB5D003F7C48 /* MediaPlayer.framework in Frameworks */,
 				A01D86C01BF2DB21003B28A4 /* AssetsLibrary.framework in Frameworks */,
@@ -226,6 +246,8 @@
 		50AB14D0BC297A8303C136F1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A0BA031B1C0FF17D00F5D9DA /* CoreMedia.framework */,
+				A0BA03191C0FF17300F5D9DA /* AVFoundation.framework */,
 				A079E56C1BFB1E2C0021D502 /* CoreGraphics.framework */,
 				DA880D842952A35E18145FAF /* libPods.a */,
 			);
@@ -401,6 +423,7 @@
 		A079E5721BFB21050021D502 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				A0BA031D1C1046EB00F5D9DA /* VIPhotoView */,
 				A02DB1991C0EFABF00E8D85F /* ALAssetsLibrary-CustomPhotoAlbum */,
 				A02DB1921C0EEDE800E8D85F /* color */,
 				A0C21D701C02AC3C002F354A /* AMSlideMenu */,
@@ -460,8 +483,19 @@
 				A079E4FB1BF9788D0021D502 /* PicCollectionViewCell.xib */,
 				A02DB18D1C0E99A100E8D85F /* DeleteView.h */,
 				A02DB18E1C0E99A200E8D85F /* DeleteView.m */,
+				A0C5FD4A1C11849300FC798A /* ResourceInfo.h */,
+				A0C5FD4B1C11849300FC798A /* ResourceInfo.m */,
 			);
 			path = PicSelect;
+			sourceTree = "<group>";
+		};
+		A0BA031D1C1046EB00F5D9DA /* VIPhotoView */ = {
+			isa = PBXGroup;
+			children = (
+				A0BA031E1C1046EB00F5D9DA /* VIPhotoView.h */,
+				A0BA031F1C1046EB00F5D9DA /* VIPhotoView.m */,
+			);
+			path = VIPhotoView;
 			sourceTree = "<group>";
 		};
 		A0BA71381BFC6E800058D92F /* GifImage */ = {
@@ -527,6 +561,11 @@
 			children = (
 				A0C21D8C1C031CF2002F354A /* ResourceViewController.h */,
 				A0C21D8D1C031CF2002F354A /* ResourceViewController.m */,
+				A0BA03141C0FEFAD00F5D9DA /* ResourceCollectionViewCell.h */,
+				A0BA03151C0FEFAD00F5D9DA /* ResourceCollectionViewCell.m */,
+				A0BA03161C0FEFAD00F5D9DA /* ResourceCollectionViewCell.xib */,
+				A0BA03211C10471900F5D9DA /* ImageShowViewController.h */,
+				A0BA03221C10471900F5D9DA /* ImageShowViewController.m */,
 			);
 			path = ResourceView;
 			sourceTree = "<group>";
@@ -582,6 +621,7 @@
 				TargetAttributes = {
 					A01D868F1BF2D9BE003B28A4 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 44288HQHUY;
 					};
 					A01D86AB1BF2D9BE003B28A4 = {
 						CreatedOnToolsVersion = 6.4;
@@ -619,6 +659,7 @@
 				A0BA71401BFC6EA00058D92F /* whalespin.gif in Resources */,
 				A09F18C41BFEFA5D0046EC5C /* GlassBall.xib in Resources */,
 				A01D86A71BF2D9BE003B28A4 /* LaunchScreen.xib in Resources */,
+				A0BA03181C0FEFAD00F5D9DA /* ResourceCollectionViewCell.xib in Resources */,
 				A01D86A41BF2D9BE003B28A4 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -690,12 +731,15 @@
 				A0BA713D1BFC6E800058D92F /* GIFImage.m in Sources */,
 				A079E5551BF9BD2A0021D502 /* SDWebImageCompat.m in Sources */,
 				A079E55A1BF9BD2A0021D502 /* SDWebImagePrefetcher.m in Sources */,
+				A0BA03171C0FEFAD00F5D9DA /* ResourceCollectionViewCell.m in Sources */,
 				A0C21D8A1C031C27002F354A /* ViedoViewController.m in Sources */,
 				A0BA713E1BFC6E810058D92F /* GIFImageView.m in Sources */,
 				A079E5611BF9BD2A0021D502 /* UIView+WebCacheOperation.m in Sources */,
 				A0C21D861C02AC3C002F354A /* UIViewController+AMSlideMenu.m in Sources */,
 				A079E56B1BFB08500021D502 /* PuzzleViewController.m in Sources */,
 				A079E55D1BF9BD2A0021D502 /* UIImage+MultiFormat.m in Sources */,
+				A0BA03231C10471900F5D9DA /* ImageShowViewController.m in Sources */,
+				A0C5FD4C1C11849300FC798A /* ResourceInfo.m in Sources */,
 				A02DB18F1C0E99A200E8D85F /* DeleteView.m in Sources */,
 				A09F19351C0071D10046EC5C /* MainViewController.m in Sources */,
 				A01D86991BF2D9BE003B28A4 /* AppDelegate.m in Sources */,
@@ -711,6 +755,7 @@
 				A079E4FC1BF9788D0021D502 /* PicCollectionViewCell.m in Sources */,
 				A02DB1971C0EEDE800E8D85F /* UIColor+Colors.m in Sources */,
 				A079E5681BFB07A80021D502 /* PuzzleImageEditView.m in Sources */,
+				A0BA03201C1046EB00F5D9DA /* VIPhotoView.m in Sources */,
 				A0B7C76F1BF5E02B003F7C48 /* PicSelectViewController.m in Sources */,
 				A079E55C1BF9BD2A0021D502 /* UIImage+GIF.m in Sources */,
 				A0C21D831C02AC3C002F354A /* AMSlideMenuMainViewController.m in Sources */,
@@ -848,6 +893,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = Time/PrefixHeader.pch;
 				INFOPLIST_FILE = Time/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -862,6 +908,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = Time/PrefixHeader.pch;
 				INFOPLIST_FILE = Time/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
