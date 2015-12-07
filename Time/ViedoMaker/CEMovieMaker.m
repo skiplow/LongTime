@@ -53,6 +53,14 @@
     return self;
 }
 
+- (UIImage *)reSizeImage:(UIImage *)image toSize:(CGSize)reSize{
+    UIGraphicsBeginImageContext(CGSizeMake(reSize.width, reSize.height));
+    [image drawInRect:CGRectMake(0, 0, reSize.width, reSize.height)];
+    UIImage *reSizeImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return reSizeImage;
+}
+
 - (void)createMovieFromImages:(NSArray *)images withCompletion:(CEMovieMakerCompletion)completion;
 {
     self.completionBlock = completion;
@@ -73,7 +81,8 @@
             }
             if ([self.writerInput isReadyForMoreMediaData]) {
                 
-                CVPixelBufferRef sampleBuffer = [self newPixelBufferFromCGImage:[[images objectAtIndex:i] CGImage]];
+
+                CVPixelBufferRef sampleBuffer = [self newPixelBufferFromCGImage:[images[i] CGImage]];
                 
                 if (sampleBuffer) {
                     if (i == 0) {

@@ -8,7 +8,9 @@
 
 #import "PuzzleViewController.h"
 #import "PuzzleImageEditView.h"
+#import "ImageShowViewController.h"
 #import "ALAssetsLibrary+CustomPhotoAlbum.h"
+#import "MBProgressHUD+NJ.h"
 #include<AssetsLibrary/AssetsLibrary.h>
 
 #define ROW_COUNT   2
@@ -29,16 +31,10 @@
     [self.contentView setBackgroundColor:[UIColor clearColor]];
     [self.view addSubview:_contentView];
     
-    _contentView.contentSize = CGSizeMake(SCREEN_WIDTH, (_imagesFrame.count / 2)*200);
+    _contentView.contentSize = CGSizeMake(SCREEN_WIDTH, ((_imagesFrame.count / 2) + 1) *200);
     
     [self setViewByImageFrame];
     
-//    UIButton * puzzleButton =[UIButton buttonWithType:UIButtonTypeRoundedRect];
-//    [puzzleButton setFrame:CGRectMake(SCREEN_WIDTH / 6,100, 50,50)];
-//    [puzzleButton setTitle:@"拼图"forState:UIControlStateNormal];
-//    [puzzleButton setBackgroundColor:[UIColor blackColor]];
-//    [puzzleButton addTarget:self action:@selector(puzzleButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:puzzleButton];
 }
 
 -(void) viewWillAppear:(BOOL)animated
@@ -76,8 +72,10 @@
  */
 - (void)puzzleButtonPressed:(id)sender
 {
+     [MBProgressHUD showMessage:@"正在合成拼图..."];
     UIImage * puzzleImage = [self captureScrollView:self.contentView];
     [self saveImageToPhotos:puzzleImage];
+
 }
 
 /**
@@ -94,22 +92,21 @@
     [library saveImage:savedImage toAlbum:@"LongTime" completion:^(NSURL *assetURL, NSError *error) {
         if (!error) {
             NSLog(@"存储成功");
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"保存图片结果提示"
-                                                            message:@"存储成功"
-                                                           delegate:self
-                                                  cancelButtonTitle:@"确定"
-                                                  otherButtonTitles:nil];
-            [alert show];
+            // 移除HUD
+            [MBProgressHUD hideHUD];
+            // 提醒成功
+            [MBProgressHUD showSuccess:@"合成成功"];
             
+            ImageShowViewController * vc = [[ImageShowViewController alloc] init];
+            vc.imageShow = savedImage;
+            [self.navigationController pushViewController:vc animated:NO];
         }
     } failure:^(NSError *error) {
         NSLog(@"存储失败");
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"保存图片结果提示"
-                                                        message:@"存储失败"
-                                                       delegate:self
-                                              cancelButtonTitle:@"确定"
-                                              otherButtonTitles:nil];
-        [alert show];
+        // 移除HUD
+        [MBProgressHUD hideHUD];
+        // 提醒失败
+        [MBProgressHUD showError:@"合成失败"];
         
     }];
 }
@@ -143,7 +140,6 @@
         UIBezierPath *path = nil;
         
         rect = CGRectMake((index % ROW_COUNT)*(SCREEN_WIDTH / 2), (index / ROW_COUNT)*200, SCREEN_WIDTH / 2, 200);
-        //NSLog(@"%lf   %lf    %lf    %lf",rect.origin.x,rect.origin.y,rect.size.width,rect.size.height);
         path = [UIBezierPath bezierPathWithRect:rect];
         PuzzleImageEditView *imageView = [[PuzzleImageEditView alloc] initWithFrame:rect];
         [imageView setClipsToBounds:YES];
@@ -152,7 +148,6 @@
         imageView.realCellArea = path;
         imageView.tapDelegate = (id)self;
         [imageView setImageViewData:_imagesFrame[index]];
-        //imageView.image = _imagesFrame[index];
         [_contentView addSubview:imageView];
     }
 }

@@ -26,11 +26,10 @@
 @property (strong, nonatomic) NSMutableArray * imageFrames;
 @property (strong, nonatomic) NSMutableArray * imageChose;
 @property (strong, nonatomic) NSMutableArray * resourceInfoArray;
+@property (strong, nonatomic) NSMutableArray * choseImageHidenArray;
 @property (strong, nonatomic) UICollectionView *myPicCollectionview;
 @property (nonatomic, strong) CEMovieMaker *movieMaker;
 @property (nonatomic, strong) DeleteView *deleteView;
-@property (nonatomic, strong) UIButton * videoButton;
-@property (nonatomic, strong) UIButton * puzzleButton;
 @property (nonatomic, strong) UIButton * choseDelButton;
 @property (nonatomic, strong) UIButton * choseNotFaceeButton;
 @property (nonatomic, strong) UIButton * backGroundButton;
@@ -52,11 +51,18 @@
     _imageFrames = [[NSMutableArray alloc] init];
     _imageChose = [[NSMutableArray alloc] init];
     _resourceInfoArray = [[NSMutableArray alloc] init];
-
+    _choseImageHidenArray = [[NSMutableArray alloc] init];
     choseType = 0;
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
-    [layout setItemSize:CGSizeMake(100, 100)];//设置cell的尺寸
+    if (SCREEN_WIDTH > 320) {
+            [layout setItemSize:CGSizeMake(100, 100)];//设置cell的尺寸
+    }
+    else
+    {
+            [layout setItemSize:CGSizeMake(90, 90)];//设置cell的尺寸
+    }
+
     [layout setScrollDirection:UICollectionViewScrollDirectionVertical];//设置其布局方向
     layout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);//设置其边界
     _myPicCollectionview = [[UICollectionView alloc] initWithFrame:CGRectMake(0,0, SCREEN_WIDTH, SCREEN_HEIGHT - 44) collectionViewLayout:layout];
@@ -69,6 +75,8 @@
     [self.view  addSubview:_myPicCollectionview];
     
     [self savePictoImageFrames];
+    
+    [self addTitleView];
     
     _deleteView = [[DeleteView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 44, SCREEN_WIDTH, 44)];
     _deleteView.delegate = self;
@@ -105,6 +113,15 @@
     UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:button];
     self.navigationItem.rightBarButtonItem = barButton;
 
+    }
+
+/**
+ *  @author yj, 15-12-04 18:12:19
+ *
+ *  替换titleView
+ */
+-(void) addTitleView
+{
     UIView * chosetTitleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 80, 40)];
     _timeNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80, 40)];
     _timeNameLabel.text = @"全部";
@@ -122,6 +139,7 @@
     [chosetTitleView addSubview:tmpxiaLaImageView];
     
     self.navigationItem.titleView = chosetTitleView;
+
 }
 
 -(void) back_main
@@ -151,8 +169,6 @@
  */
 -(void) multipleChoice
 {
-    _videoButton.hidden = TRUE;
-    _puzzleButton.hidden = TRUE;
     choseType = 1;
     
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 24)];
@@ -231,8 +247,6 @@
  */
 -(void) cancleMultipleChoice
 {
-    _videoButton.hidden = FALSE;
-    _puzzleButton.hidden = FALSE;
     choseType = 0;
     
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 24)];
@@ -309,10 +323,10 @@
  *
  *  @param sender
  */
--(void) deletButton:(id)sender
+-(void) deletButton:(int)index
 {
-    UIButton * tmpButton = sender;
-    deleteIndex = tmpButton.tag;
+    //UIButton * tmpButton = sender;
+    deleteIndex = index;
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:deleteIndex inSection:0];
     PicCollectionViewCell * cell = (PicCollectionViewCell *)[_myPicCollectionview cellForItemAtIndexPath:indexPath];
@@ -431,6 +445,7 @@
 //定义展示的UICollectionViewCell的个数
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
+
     return _imageFrames.count;
 }
 //定义展示的Section的个数
@@ -441,16 +456,23 @@
 //每个UICollectionView展示的内容
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    
     PicCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellNibName_PicCollectionViewCell forIndexPath:indexPath];
 
-
+    if (indexPath.row > _imageFrames.count) {
+        return cell;
+    }
     cell.picImageView.image = _imageFrames[indexPath.row];
     cell.picImageView.backgroundColor = [UIColor blackColor];
-    [cell.delButton addTarget:self action:@selector(deletButton:) forControlEvents:UIControlEventTouchUpInside];
-    cell.delButton.tag = indexPath.row;
-    //cell.delButton.hidden = TRUE;
-    cell.choseImageView.hidden = TRUE;
+    if([_imageChose containsObject:[NSString stringWithFormat:@"%ld",(long)indexPath.row]])
+    {
+        cell.choseImageView.hidden = FALSE;
+    }
+    else
+    {
+        cell.choseImageView.hidden = TRUE;
+    }
+
     
     return cell;
 }
@@ -460,7 +482,7 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
 
-
+    [self deletButton:(int) indexPath.row];
 
 }
 //返回这个UICollectionView是否可以被选择
@@ -506,11 +528,6 @@
         [_myPicCollectionview reloadSections:indexSet];
         [_backGroundButton removeFromSuperview];
         
-//        [_imagesurl removeObjectAtIndex:deleteIndex];
-//        //本地化存储
-//        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-//        [userDefaults setValue:_imagesurl forKey:personal_image];
-//        [userDefaults synchronize];
     }
     else if (choseType == 1)
     {
@@ -523,8 +540,8 @@
 
 -(void) videoButtonPressed
 {
-    UIImage * frame = _imageFrames[0];
     
+    UIImage * frame = _imageFrames[0];
     NSDictionary *settings = [CEMovieMaker videoSettingsWithCodec:AVVideoCodecH264 withWidth:frame.size.width andHeight:frame.size.height];
     self.movieMaker = [[CEMovieMaker alloc] initWithSettings:settings];
     
@@ -540,7 +557,7 @@
                 
             }
         } failure:^(NSError *error) {
-            NSLog(@"存储ship失败");
+            NSLog(@"存储视频失败");
             
         }];
         
@@ -561,12 +578,10 @@
         case 0:  //近一个月
         {
             NSDate *now = [NSDate date];
-            NSLog(@"now = %@",now);
             NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
             [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
             NSTimeInterval time = 30 * 24 * 60 * 60;//一个月的秒数
             NSDate * lastDate = [now dateByAddingTimeInterval:-time];
-            NSLog(@"lastDate = %@",lastDate);
             [self imageInfoAfterDate:lastDate];
             _timeNameLabel.text =[actionSheet buttonTitleAtIndex:buttonIndex];
         }
@@ -575,12 +590,10 @@
         case 1:  //近两个月
         {
             NSDate *now = [NSDate date];
-            NSLog(@"now = %@",now);
             NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
             [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
             NSTimeInterval time = 30 * 2 * 24 * 60 * 60;//两个月的秒数
             NSDate * lastDate = [now dateByAddingTimeInterval:-time];
-            NSLog(@"lastDate = %@",lastDate);
             [self imageInfoAfterDate:lastDate];
             _timeNameLabel.text =[actionSheet buttonTitleAtIndex:buttonIndex];
         }
@@ -588,12 +601,10 @@
         case 2:  //近三个月
         {
             NSDate *now = [NSDate date];
-            NSLog(@"now = %@",now);
             NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
             [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
             NSTimeInterval time = 30 * 3 * 24 * 60 * 60;//三个月的秒数
             NSDate * lastDate = [now dateByAddingTimeInterval:-time];
-            NSLog(@"lastDate = %@",lastDate);
             [self imageInfoAfterDate:lastDate];
             _timeNameLabel.text =[actionSheet buttonTitleAtIndex:buttonIndex];
         }
@@ -601,12 +612,10 @@
         case 3:  //近半年
         {
             NSDate *now = [NSDate date];
-            NSLog(@"now = %@",now);
             NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
             [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
             NSTimeInterval time = 30 * 6 * 24 * 60 * 60;//半年的秒数
             NSDate * lastDate = [now dateByAddingTimeInterval:-time];
-            NSLog(@"lastDate = %@",lastDate);
             [self imageInfoAfterDate:lastDate];
             _timeNameLabel.text =[actionSheet buttonTitleAtIndex:buttonIndex];
         }

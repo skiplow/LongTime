@@ -7,304 +7,349 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0515E5C3E44C826ED1CAAADA /* SlideNavigationContorllerAnimatorScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A5F25EE504CFC0E496F7AA /* SlideNavigationContorllerAnimatorScale.m */; };
-		11598B2F8FC010DF04F67C36 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3443C85799786EF6F900E14C /* UIKit.framework */; };
-		11A1B7622407181E93D07C97 /* SlideNavigationContorllerAnimatorFade.m in Sources */ = {isa = PBXBuildFile; fileRef = F6B416B10EFB546259A67B8D /* SlideNavigationContorllerAnimatorFade.m */; };
-		16B524E5D9FF91592668B2D1 /* SlideNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FB1A108E8605F469A9B4D /* SlideNavigationController.m */; };
-		255F7FD49AF36E1F405444B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F05B58F16BD47ACE2B4D3FB /* Foundation.framework */; };
-		2C2B0ED3A0FFF1E229EEEF69 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F05B58F16BD47ACE2B4D3FB /* Foundation.framework */; };
-		4AB6C99DD5313B49E0B2607A /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF36BB60C46F7CAFFDEA01B /* SlideNavigationContorllerAnimatorScaleAndFade.m */; };
-		5321297EDD1DDA8B11F28583 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE67F7E2B24DC4379A01B54 /* Pods-dummy.m */; };
-		57DC4CED62EB1A5FED80E9CB /* SlideNavigationContorllerAnimatorSlide.h in Headers */ = {isa = PBXBuildFile; fileRef = 80A9322270BE6027320E3786 /* SlideNavigationContorllerAnimatorSlide.h */; };
-		87685981C561AC2602F3C456 /* SlideNavigationContorllerAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = 66FFA30AB104D5DF55BDABF5 /* SlideNavigationContorllerAnimator.h */; };
-		8902DF081ED47EE22614BE30 /* SlideNavigationContorllerAnimatorSlideAndFade.h in Headers */ = {isa = PBXBuildFile; fileRef = 70E900A745973143A0B2B52C /* SlideNavigationContorllerAnimatorSlideAndFade.h */; };
-		8D3A84638F06C77E7672F2FF /* Pods-EGOCache-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EAED70E63CA948297694CB /* Pods-EGOCache-dummy.m */; };
-		919AB80FCA43ED9D960BD1EB /* SlideNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 77ADDBF594856DE1ED9227E0 /* SlideNavigationController.h */; };
-		94AE2686182198DF0176E2AB /* SlideNavigationContorllerAnimatorSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = C53112BB92A2FE37578D44A2 /* SlideNavigationContorllerAnimatorSlide.m */; };
-		967F84B83BD31543C79227A5 /* EGOCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 16E7E37FD3582304E4790DED /* EGOCache.h */; };
-		97B45FFD81B7909F8A223D2A /* SlideNavigationContorllerAnimatorScale.h in Headers */ = {isa = PBXBuildFile; fileRef = 5822D77D94000125ADE881D6 /* SlideNavigationContorllerAnimatorScale.h */; };
-		9C728B8B92A2BF432889AEF9 /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A3330DA4A6478247222B6C /* EGOCache.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		A1C80B46ACAA1911134F6515 /* Pods-iOS-Slide-Menu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 51AC6BEE371DBC539D981CF4 /* Pods-iOS-Slide-Menu-dummy.m */; };
-		A726B4DB0D4EA946BCA6D77C /* SlideNavigationContorllerAnimatorFade.h in Headers */ = {isa = PBXBuildFile; fileRef = E019F3B9D522B307FF8822EF /* SlideNavigationContorllerAnimatorFade.h */; };
-		B297B11D99C02152301DDE47 /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */ = {isa = PBXBuildFile; fileRef = A97ABEC209326928A2DBFD50 /* SlideNavigationContorllerAnimatorSlideAndFade.m */; };
-		D7F49FCD2BD6C0008A17BE21 /* SlideNavigationContorllerAnimatorScaleAndFade.h in Headers */ = {isa = PBXBuildFile; fileRef = DC63169EF9B58D5929FE3C29 /* SlideNavigationContorllerAnimatorScaleAndFade.h */; };
-		E94E76C112840C8256552F2A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F05B58F16BD47ACE2B4D3FB /* Foundation.framework */; };
+		00DDB79A74F62B229FB841E2 /* SlideNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 948DACEE0CA03BF3A2D5EDA0 /* SlideNavigationController.h */; };
+		0163DA8BBD20DF6AAADD7873 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE47FDE4C01813CE3627E17 /* Foundation.framework */; };
+		108AEEFB6296C5CA777838F6 /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCE0C4F112B9AB7D8786189 /* SlideNavigationContorllerAnimatorSlideAndFade.m */; };
+		14C1F85A1401B01C43A62870 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CA83649D42AE7AD616DE228 /* UIKit.framework */; };
+		16B3B12E561B265EE0027E35 /* EGOCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 735941D1975ABD7BBD52D5A5 /* EGOCache.h */; };
+		17DDF1F30263D527F6820C13 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3489C94BADD091145044B13E /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		2580A3FB866910208E801357 /* SlideNavigationContorllerAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F4C40337FEB785C0BF0B0E7 /* SlideNavigationContorllerAnimator.h */; };
+		26B6903FCE9D7FDA3BFF3880 /* SlideNavigationContorllerAnimatorScaleAndFade.h in Headers */ = {isa = PBXBuildFile; fileRef = C4375B5BABD417636FCC82FB /* SlideNavigationContorllerAnimatorScaleAndFade.h */; };
+		4EE05633F5A618F0DBFBA662 /* SlideNavigationContorllerAnimatorFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F839668828DA6505DD35C4 /* SlideNavigationContorllerAnimatorFade.m */; };
+		530C3995EA82EC2D71298694 /* Pods-MBProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E658564FDEDAC31957671E31 /* Pods-MBProgressHUD-dummy.m */; };
+		59EF729834C15364CC66B924 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE47FDE4C01813CE3627E17 /* Foundation.framework */; };
+		674E986A66114DFEF4D04F75 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE47FDE4C01813CE3627E17 /* Foundation.framework */; };
+		6D419CAA91ED0863400D7645 /* SlideNavigationContorllerAnimatorScale.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAC8AA3486350404239C795 /* SlideNavigationContorllerAnimatorScale.h */; };
+		7219445D488D4B429E5F6D65 /* SlideNavigationContorllerAnimatorSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = 838A8B3051F20E9704020716 /* SlideNavigationContorllerAnimatorSlide.m */; };
+		75E2720B5F036398EC3E663E /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E047AB3792D6869E6C6A0F6 /* MBProgressHUD.h */; };
+		7BC2242F7F00BA466424A80E /* SlideNavigationContorllerAnimatorScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 1122C895B338FB740139E33E /* SlideNavigationContorllerAnimatorScale.m */; };
+		807D5E308EB413B0C8D155CF /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C396F8E58EDACD4212645B4 /* EGOCache.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		8B9C9F5F38604A783CDA0E6B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E356FAD51143FAD486A7E14 /* CoreGraphics.framework */; };
+		94D488E871912426848B6533 /* Pods-EGOCache-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 06226CEF8526569EC5E41A74 /* Pods-EGOCache-dummy.m */; };
+		A673775EFECB19995C1B7732 /* SlideNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4993B0DFD1041E2ABEB4DD64 /* SlideNavigationController.m */; };
+		A716CBC183995C2357A9454D /* SlideNavigationContorllerAnimatorSlideAndFade.h in Headers */ = {isa = PBXBuildFile; fileRef = AB7F854DE17D989641A16E03 /* SlideNavigationContorllerAnimatorSlideAndFade.h */; };
+		B6047190790D4F529B76BA2C /* SlideNavigationContorllerAnimatorSlide.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A410B1E508C72F1BBF6BECB /* SlideNavigationContorllerAnimatorSlide.h */; };
+		C1014393B78916DF30BB6193 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 32AA97703410F95FD9CFEEEF /* Pods-dummy.m */; };
+		D10C637948B08038D4CE4AF1 /* Pods-iOS-Slide-Menu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6711CFE4C0044A6F37B2D49A /* Pods-iOS-Slide-Menu-dummy.m */; };
+		DFF36E0CA05F42C0F4AA49AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE47FDE4C01813CE3627E17 /* Foundation.framework */; };
+		E60E790DF2C172C2B247F95C /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */ = {isa = PBXBuildFile; fileRef = BDA5D68B61D964BDFCD5ECB4 /* SlideNavigationContorllerAnimatorScaleAndFade.m */; };
+		FA7A7F573C3F2D0A003BEB63 /* SlideNavigationContorllerAnimatorFade.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B4E7B65C12D872C6FE7479D /* SlideNavigationContorllerAnimatorFade.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		52AF7EA395BAD7970AF2E078 /* PBXContainerItemProxy */ = {
+		23363A286780D635C6CDBB4F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 6250986C657972E71A41419B /* Project object */;
+			containerPortal = 4B7B3B4E3253133F4951A6A8 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 78FE9CE0B8E49ACE94CF93CA;
+			remoteGlobalIDString = AE2EBADAAF95C266FD585C5E;
+			remoteInfo = "Pods-MBProgressHUD";
+		};
+		83F1E7CEC7BBDC8A04C1C0F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4B7B3B4E3253133F4951A6A8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2838576FF0C5DDC93155485B;
 			remoteInfo = "Pods-iOS-Slide-Menu";
 		};
-		C3CABBC5536AE383D3386305 /* PBXContainerItemProxy */ = {
+		DA520CAE7B1469DAFEC07E68 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 6250986C657972E71A41419B /* Project object */;
+			containerPortal = 4B7B3B4E3253133F4951A6A8 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 30770D6DB4C30FD9BA91654A;
+			remoteGlobalIDString = E9DC57DDAFA29729E1D09895;
 			remoteInfo = "Pods-EGOCache";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0AC5A91B54765A3CA15F4659 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		0D9FB1A108E8605F469A9B4D /* SlideNavigationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SlideNavigationController.m; path = SlideMenu/Source/SlideNavigationController.m; sourceTree = "<group>"; };
-		16E7E37FD3582304E4790DED /* EGOCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EGOCache.h; sourceTree = "<group>"; };
-		3443C85799786EF6F900E14C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		39253DA1C41C6F14A4E48029 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AF36BB60C46F7CAFFDEA01B /* SlideNavigationContorllerAnimatorScaleAndFade.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SlideNavigationContorllerAnimatorScaleAndFade.m; path = SlideMenu/Source/Animations/SlideNavigationContorllerAnimatorScaleAndFade.m; sourceTree = "<group>"; };
-		3F05B58F16BD47ACE2B4D3FB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		49EAED70E63CA948297694CB /* Pods-EGOCache-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EGOCache-dummy.m"; sourceTree = "<group>"; };
-		4AA8738D887D7396FE40A654 /* libPods-iOS-Slide-Menu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS-Slide-Menu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		50AA711A5FA18D1518D04B81 /* Pods-iOS-Slide-Menu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS-Slide-Menu.xcconfig"; sourceTree = "<group>"; };
-		51611EBF0381144EAB071423 /* Pods-EGOCache.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EGOCache.xcconfig"; sourceTree = "<group>"; };
-		51AC6BEE371DBC539D981CF4 /* Pods-iOS-Slide-Menu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-iOS-Slide-Menu-dummy.m"; sourceTree = "<group>"; };
-		5822D77D94000125ADE881D6 /* SlideNavigationContorllerAnimatorScale.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SlideNavigationContorllerAnimatorScale.h; path = SlideMenu/Source/Animations/SlideNavigationContorllerAnimatorScale.h; sourceTree = "<group>"; };
-		5B5A043775B784DB01879DCD /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		65D17CF85E93F0000DFCF28A /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
-		66FFA30AB104D5DF55BDABF5 /* SlideNavigationContorllerAnimator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SlideNavigationContorllerAnimator.h; path = SlideMenu/Source/Animations/SlideNavigationContorllerAnimator.h; sourceTree = "<group>"; };
-		70E900A745973143A0B2B52C /* SlideNavigationContorllerAnimatorSlideAndFade.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SlideNavigationContorllerAnimatorSlideAndFade.h; path = SlideMenu/Source/Animations/SlideNavigationContorllerAnimatorSlideAndFade.h; sourceTree = "<group>"; };
-		72EB192FBCE68415CE807BA9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		75A5F25EE504CFC0E496F7AA /* SlideNavigationContorllerAnimatorScale.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SlideNavigationContorllerAnimatorScale.m; path = SlideMenu/Source/Animations/SlideNavigationContorllerAnimatorScale.m; sourceTree = "<group>"; };
-		77ADDBF594856DE1ED9227E0 /* SlideNavigationController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SlideNavigationController.h; path = SlideMenu/Source/SlideNavigationController.h; sourceTree = "<group>"; };
-		80A9322270BE6027320E3786 /* SlideNavigationContorllerAnimatorSlide.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SlideNavigationContorllerAnimatorSlide.h; path = SlideMenu/Source/Animations/SlideNavigationContorllerAnimatorSlide.h; sourceTree = "<group>"; };
-		9028259DBFD4468C7D8B4A71 /* Pods-iOS-Slide-Menu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-iOS-Slide-Menu-prefix.pch"; sourceTree = "<group>"; };
-		92B9CCEC2D689D93D08DAB9E /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		98A3330DA4A6478247222B6C /* EGOCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EGOCache.m; sourceTree = "<group>"; };
-		993023F260FC331CD14A37CA /* Pods-EGOCache-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EGOCache-Private.xcconfig"; sourceTree = "<group>"; };
-		99747E10967AEEAEEA46D384 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		9DE67F7E2B24DC4379A01B54 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		A97ABEC209326928A2DBFD50 /* SlideNavigationContorllerAnimatorSlideAndFade.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SlideNavigationContorllerAnimatorSlideAndFade.m; path = SlideMenu/Source/Animations/SlideNavigationContorllerAnimatorSlideAndFade.m; sourceTree = "<group>"; };
-		B275DB3BEA8657756E3A4992 /* libPods-EGOCache.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EGOCache.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C53112BB92A2FE37578D44A2 /* SlideNavigationContorllerAnimatorSlide.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SlideNavigationContorllerAnimatorSlide.m; path = SlideMenu/Source/Animations/SlideNavigationContorllerAnimatorSlide.m; sourceTree = "<group>"; };
-		C7FA807FB7255D5133F39CE6 /* menu-button.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "menu-button.png"; path = "SlideMenu/Source/Assets/menu-button.png"; sourceTree = "<group>"; };
-		CED5270B1794BFA0E09BCE11 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
-		D42BFC4F9CA66FAF31E90107 /* menu-button@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "menu-button@2x.png"; path = "SlideMenu/Source/Assets/menu-button@2x.png"; sourceTree = "<group>"; };
-		D7DBD3A6007BBFFC0744C49A /* Pods-iOS-Slide-Menu-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS-Slide-Menu-Private.xcconfig"; sourceTree = "<group>"; };
-		DC63169EF9B58D5929FE3C29 /* SlideNavigationContorllerAnimatorScaleAndFade.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SlideNavigationContorllerAnimatorScaleAndFade.h; path = SlideMenu/Source/Animations/SlideNavigationContorllerAnimatorScaleAndFade.h; sourceTree = "<group>"; };
-		E019F3B9D522B307FF8822EF /* SlideNavigationContorllerAnimatorFade.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SlideNavigationContorllerAnimatorFade.h; path = SlideMenu/Source/Animations/SlideNavigationContorllerAnimatorFade.h; sourceTree = "<group>"; };
-		EFFAED4B5B12E4478C932244 /* Pods-EGOCache-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EGOCache-prefix.pch"; sourceTree = "<group>"; };
-		F6B416B10EFB546259A67B8D /* SlideNavigationContorllerAnimatorFade.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SlideNavigationContorllerAnimatorFade.m; path = SlideMenu/Source/Animations/SlideNavigationContorllerAnimatorFade.m; sourceTree = "<group>"; };
+		06226CEF8526569EC5E41A74 /* Pods-EGOCache-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EGOCache-dummy.m"; sourceTree = "<group>"; };
+		0F4C40337FEB785C0BF0B0E7 /* SlideNavigationContorllerAnimator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SlideNavigationContorllerAnimator.h; path = SlideMenu/Source/Animations/SlideNavigationContorllerAnimator.h; sourceTree = "<group>"; };
+		107116A10FD671A69D07BE54 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		1074815B4C371BC6AE0F8817 /* Pods-iOS-Slide-Menu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS-Slide-Menu.xcconfig"; sourceTree = "<group>"; };
+		1122C895B338FB740139E33E /* SlideNavigationContorllerAnimatorScale.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SlideNavigationContorllerAnimatorScale.m; path = SlideMenu/Source/Animations/SlideNavigationContorllerAnimatorScale.m; sourceTree = "<group>"; };
+		132B8319610A0057349210F9 /* Pods-iOS-Slide-Menu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-iOS-Slide-Menu-prefix.pch"; sourceTree = "<group>"; };
+		13C9E1CCD5E127C14403DC20 /* libPods-iOS-Slide-Menu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS-Slide-Menu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		18F839668828DA6505DD35C4 /* SlideNavigationContorllerAnimatorFade.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SlideNavigationContorllerAnimatorFade.m; path = SlideMenu/Source/Animations/SlideNavigationContorllerAnimatorFade.m; sourceTree = "<group>"; };
+		1AEA60A437719EC4891E4C8A /* libPods-EGOCache.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EGOCache.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B4E7B65C12D872C6FE7479D /* SlideNavigationContorllerAnimatorFade.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SlideNavigationContorllerAnimatorFade.h; path = SlideMenu/Source/Animations/SlideNavigationContorllerAnimatorFade.h; sourceTree = "<group>"; };
+		1CA83649D42AE7AD616DE228 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		1F93B12DF818CEFC96C3D48B /* menu-button.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "menu-button.png"; path = "SlideMenu/Source/Assets/menu-button.png"; sourceTree = "<group>"; };
+		242ED7A55EAA9B94E5CA749F /* Pods-MBProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MBProgressHUD.xcconfig"; sourceTree = "<group>"; };
+		266050FFB0DDD9C46FB06AB8 /* Pods-EGOCache-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EGOCache-Private.xcconfig"; sourceTree = "<group>"; };
+		32AA97703410F95FD9CFEEEF /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		3489C94BADD091145044B13E /* MBProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		37BF5F60D39E8DFDECD8C7B4 /* menu-button@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "menu-button@2x.png"; path = "SlideMenu/Source/Assets/menu-button@2x.png"; sourceTree = "<group>"; };
+		3A410B1E508C72F1BBF6BECB /* SlideNavigationContorllerAnimatorSlide.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SlideNavigationContorllerAnimatorSlide.h; path = SlideMenu/Source/Animations/SlideNavigationContorllerAnimatorSlide.h; sourceTree = "<group>"; };
+		3CCE0C4F112B9AB7D8786189 /* SlideNavigationContorllerAnimatorSlideAndFade.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SlideNavigationContorllerAnimatorSlideAndFade.m; path = SlideMenu/Source/Animations/SlideNavigationContorllerAnimatorSlideAndFade.m; sourceTree = "<group>"; };
+		3CE47FDE4C01813CE3627E17 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		4993B0DFD1041E2ABEB4DD64 /* SlideNavigationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SlideNavigationController.m; path = SlideMenu/Source/SlideNavigationController.m; sourceTree = "<group>"; };
+		4BB41FB2F86AB73B9C29B136 /* libPods-MBProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MBProgressHUD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DF8DADCF00813282DCC7F72 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		64BF479521F35D71CD45CCAC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6711CFE4C0044A6F37B2D49A /* Pods-iOS-Slide-Menu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-iOS-Slide-Menu-dummy.m"; sourceTree = "<group>"; };
+		6E047AB3792D6869E6C6A0F6 /* MBProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		735941D1975ABD7BBD52D5A5 /* EGOCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EGOCache.h; sourceTree = "<group>"; };
+		838A8B3051F20E9704020716 /* SlideNavigationContorllerAnimatorSlide.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SlideNavigationContorllerAnimatorSlide.m; path = SlideMenu/Source/Animations/SlideNavigationContorllerAnimatorSlide.m; sourceTree = "<group>"; };
+		855989BB4D0B38370A427A6E /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8C396F8E58EDACD4212645B4 /* EGOCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EGOCache.m; sourceTree = "<group>"; };
+		8E9052EA62C131F178EABE5A /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		948DACEE0CA03BF3A2D5EDA0 /* SlideNavigationController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SlideNavigationController.h; path = SlideMenu/Source/SlideNavigationController.h; sourceTree = "<group>"; };
+		95F630E766E1396982DD5E56 /* Pods-MBProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MBProgressHUD-prefix.pch"; sourceTree = "<group>"; };
+		97F3D77D60D85DC1D23B7272 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		9E356FAD51143FAD486A7E14 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		A50805FBE0E34A29B9FEC57F /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		AB7F854DE17D989641A16E03 /* SlideNavigationContorllerAnimatorSlideAndFade.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SlideNavigationContorllerAnimatorSlideAndFade.h; path = SlideMenu/Source/Animations/SlideNavigationContorllerAnimatorSlideAndFade.h; sourceTree = "<group>"; };
+		AEAC8AA3486350404239C795 /* SlideNavigationContorllerAnimatorScale.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SlideNavigationContorllerAnimatorScale.h; path = SlideMenu/Source/Animations/SlideNavigationContorllerAnimatorScale.h; sourceTree = "<group>"; };
+		BDA5D68B61D964BDFCD5ECB4 /* SlideNavigationContorllerAnimatorScaleAndFade.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SlideNavigationContorllerAnimatorScaleAndFade.m; path = SlideMenu/Source/Animations/SlideNavigationContorllerAnimatorScaleAndFade.m; sourceTree = "<group>"; };
+		C4375B5BABD417636FCC82FB /* SlideNavigationContorllerAnimatorScaleAndFade.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SlideNavigationContorllerAnimatorScaleAndFade.h; path = SlideMenu/Source/Animations/SlideNavigationContorllerAnimatorScaleAndFade.h; sourceTree = "<group>"; };
+		C46C81827E7E6E1DE51DCB12 /* Pods-MBProgressHUD-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MBProgressHUD-Private.xcconfig"; sourceTree = "<group>"; };
+		C8ADAA5C7BBCB73D1F4671D6 /* Pods-EGOCache-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EGOCache-prefix.pch"; sourceTree = "<group>"; };
+		DFA8F06A48EF36E66BF6C0CD /* Pods-EGOCache.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EGOCache.xcconfig"; sourceTree = "<group>"; };
+		E658564FDEDAC31957671E31 /* Pods-MBProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MBProgressHUD-dummy.m"; sourceTree = "<group>"; };
+		E93549D782AAED3A3433DB34 /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
+		F6AF4801A52D4F71A4D58FF7 /* Pods-iOS-Slide-Menu-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS-Slide-Menu-Private.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		65C1E945E517B3B0E64BF968 /* Frameworks */ = {
+		220753B42E18DBEB29DA0407 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C2B0ED3A0FFF1E229EEEF69 /* Foundation.framework in Frameworks */,
-				11598B2F8FC010DF04F67C36 /* UIKit.framework in Frameworks */,
+				0163DA8BBD20DF6AAADD7873 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DA0C7F0C6EAC05AFA50A9DFF /* Frameworks */ = {
+		2A5292099F4788D693064198 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				255F7FD49AF36E1F405444B1 /* Foundation.framework in Frameworks */,
+				8B9C9F5F38604A783CDA0E6B /* CoreGraphics.framework in Frameworks */,
+				674E986A66114DFEF4D04F75 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FFE23E60DBECBB4415704448 /* Frameworks */ = {
+		50E7BA015632004E9F7BB935 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E94E76C112840C8256552F2A /* Foundation.framework in Frameworks */,
+				DFF36E0CA05F42C0F4AA49AE /* Foundation.framework in Frameworks */,
+				14C1F85A1401B01C43A62870 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2DBEBB9E4101DEFD1C92BC4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59EF729834C15364CC66B924 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0388D937180C87C694A08FE4 /* Pods */ = {
+		0B7E76FEC0300E9D426C6ED1 /* EGOCache */ = {
 			isa = PBXGroup;
 			children = (
-				F031FCEFB8758839D78C092A /* EGOCache */,
-				2F94976FC8496E9869E8147B /* iOS-Slide-Menu */,
+				735941D1975ABD7BBD52D5A5 /* EGOCache.h */,
+				8C396F8E58EDACD4212645B4 /* EGOCache.m */,
+				80DCAE2D4FE1DCD798287921 /* Support Files */,
 			);
-			name = Pods;
+			path = EGOCache;
 			sourceTree = "<group>";
 		};
-		1C23BCCD9C41E3824F68F4BB /* Resources */ = {
+		0EE381658052D6CEE436BD0F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				C7FA807FB7255D5133F39CE6 /* menu-button.png */,
-				D42BFC4F9CA66FAF31E90107 /* menu-button@2x.png */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		1F82B4FBCA6A258EBCB46BAE /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				32B47571BAD4809FABE7EEEC /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		23057603D0E3BDCFE34CB8AA /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				5B5A043775B784DB01879DCD /* Pods-acknowledgements.markdown */,
-				92B9CCEC2D689D93D08DAB9E /* Pods-acknowledgements.plist */,
-				9DE67F7E2B24DC4379A01B54 /* Pods-dummy.m */,
-				65D17CF85E93F0000DFCF28A /* Pods-environment.h */,
-				CED5270B1794BFA0E09BCE11 /* Pods-resources.sh */,
-				72EB192FBCE68415CE807BA9 /* Pods.debug.xcconfig */,
-				99747E10967AEEAEEA46D384 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			path = "Target Support Files/Pods";
-			sourceTree = "<group>";
-		};
-		2F94976FC8496E9869E8147B /* iOS-Slide-Menu */ = {
-			isa = PBXGroup;
-			children = (
-				66FFA30AB104D5DF55BDABF5 /* SlideNavigationContorllerAnimator.h */,
-				E019F3B9D522B307FF8822EF /* SlideNavigationContorllerAnimatorFade.h */,
-				F6B416B10EFB546259A67B8D /* SlideNavigationContorllerAnimatorFade.m */,
-				5822D77D94000125ADE881D6 /* SlideNavigationContorllerAnimatorScale.h */,
-				75A5F25EE504CFC0E496F7AA /* SlideNavigationContorllerAnimatorScale.m */,
-				DC63169EF9B58D5929FE3C29 /* SlideNavigationContorllerAnimatorScaleAndFade.h */,
-				3AF36BB60C46F7CAFFDEA01B /* SlideNavigationContorllerAnimatorScaleAndFade.m */,
-				80A9322270BE6027320E3786 /* SlideNavigationContorllerAnimatorSlide.h */,
-				C53112BB92A2FE37578D44A2 /* SlideNavigationContorllerAnimatorSlide.m */,
-				70E900A745973143A0B2B52C /* SlideNavigationContorllerAnimatorSlideAndFade.h */,
-				A97ABEC209326928A2DBFD50 /* SlideNavigationContorllerAnimatorSlideAndFade.m */,
-				77ADDBF594856DE1ED9227E0 /* SlideNavigationController.h */,
-				0D9FB1A108E8605F469A9B4D /* SlideNavigationController.m */,
-				1C23BCCD9C41E3824F68F4BB /* Resources */,
-				9E79473ABA3590E790434C47 /* Support Files */,
-			);
-			path = "iOS-Slide-Menu";
-			sourceTree = "<group>";
-		};
-		32B47571BAD4809FABE7EEEC /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				3F05B58F16BD47ACE2B4D3FB /* Foundation.framework */,
-				3443C85799786EF6F900E14C /* UIKit.framework */,
+				9E356FAD51143FAD486A7E14 /* CoreGraphics.framework */,
+				3CE47FDE4C01813CE3627E17 /* Foundation.framework */,
+				1CA83649D42AE7AD616DE228 /* UIKit.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		823F35CE2CB8AA37C3D59022 /* Targets Support Files */ = {
+		0F6E2AB4142C9872533ADA9D = {
 			isa = PBXGroup;
 			children = (
-				23057603D0E3BDCFE34CB8AA /* Pods */,
+				855989BB4D0B38370A427A6E /* Podfile */,
+				7A55B5ED3C9512E58B351A51 /* Frameworks */,
+				183E57BCB8B4ADFA8380EE88 /* Pods */,
+				D5020BEFBE1D19E143BE034E /* Products */,
+				89DFAD7D9644F835677FF73E /* Targets Support Files */,
 			);
-			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		981A1FDCD01802E9E3E06DAC /* Products */ = {
+		183E57BCB8B4ADFA8380EE88 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				39253DA1C41C6F14A4E48029 /* libPods.a */,
-				B275DB3BEA8657756E3A4992 /* libPods-EGOCache.a */,
-				4AA8738D887D7396FE40A654 /* libPods-iOS-Slide-Menu.a */,
+				0B7E76FEC0300E9D426C6ED1 /* EGOCache */,
+				44B498A71523D56855062C27 /* MBProgressHUD */,
+				9C0FA6EC61E66662441E59B7 /* iOS-Slide-Menu */,
 			);
-			name = Products;
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		9E79473ABA3590E790434C47 /* Support Files */ = {
+		43FC7328BDD10B600B710066 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				50AA711A5FA18D1518D04B81 /* Pods-iOS-Slide-Menu.xcconfig */,
-				D7DBD3A6007BBFFC0744C49A /* Pods-iOS-Slide-Menu-Private.xcconfig */,
-				51AC6BEE371DBC539D981CF4 /* Pods-iOS-Slide-Menu-dummy.m */,
-				9028259DBFD4468C7D8B4A71 /* Pods-iOS-Slide-Menu-prefix.pch */,
+				242ED7A55EAA9B94E5CA749F /* Pods-MBProgressHUD.xcconfig */,
+				C46C81827E7E6E1DE51DCB12 /* Pods-MBProgressHUD-Private.xcconfig */,
+				E658564FDEDAC31957671E31 /* Pods-MBProgressHUD-dummy.m */,
+				95F630E766E1396982DD5E56 /* Pods-MBProgressHUD-prefix.pch */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/Pods-iOS-Slide-Menu";
+			path = "../Target Support Files/Pods-MBProgressHUD";
 			sourceTree = "<group>";
 		};
-		D59290814024B321CF832A83 /* Support Files */ = {
+		44B498A71523D56855062C27 /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				51611EBF0381144EAB071423 /* Pods-EGOCache.xcconfig */,
-				993023F260FC331CD14A37CA /* Pods-EGOCache-Private.xcconfig */,
-				49EAED70E63CA948297694CB /* Pods-EGOCache-dummy.m */,
-				EFFAED4B5B12E4478C932244 /* Pods-EGOCache-prefix.pch */,
+				6E047AB3792D6869E6C6A0F6 /* MBProgressHUD.h */,
+				3489C94BADD091145044B13E /* MBProgressHUD.m */,
+				43FC7328BDD10B600B710066 /* Support Files */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		7A55B5ED3C9512E58B351A51 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0EE381658052D6CEE436BD0F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		80DCAE2D4FE1DCD798287921 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DFA8F06A48EF36E66BF6C0CD /* Pods-EGOCache.xcconfig */,
+				266050FFB0DDD9C46FB06AB8 /* Pods-EGOCache-Private.xcconfig */,
+				06226CEF8526569EC5E41A74 /* Pods-EGOCache-dummy.m */,
+				C8ADAA5C7BBCB73D1F4671D6 /* Pods-EGOCache-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Pods-EGOCache";
 			sourceTree = "<group>";
 		};
-		E0DD09386D801F1D64A4DAA3 = {
+		89DFAD7D9644F835677FF73E /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				0AC5A91B54765A3CA15F4659 /* Podfile */,
-				1F82B4FBCA6A258EBCB46BAE /* Frameworks */,
-				0388D937180C87C694A08FE4 /* Pods */,
-				981A1FDCD01802E9E3E06DAC /* Products */,
-				823F35CE2CB8AA37C3D59022 /* Targets Support Files */,
+				E0EBC3E1A7F92386FF755F2E /* Pods */,
 			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		F031FCEFB8758839D78C092A /* EGOCache */ = {
+		98B8E7B50654C3D75AD34511 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				16E7E37FD3582304E4790DED /* EGOCache.h */,
-				98A3330DA4A6478247222B6C /* EGOCache.m */,
-				D59290814024B321CF832A83 /* Support Files */,
+				1F93B12DF818CEFC96C3D48B /* menu-button.png */,
+				37BF5F60D39E8DFDECD8C7B4 /* menu-button@2x.png */,
 			);
-			path = EGOCache;
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		9C0FA6EC61E66662441E59B7 /* iOS-Slide-Menu */ = {
+			isa = PBXGroup;
+			children = (
+				0F4C40337FEB785C0BF0B0E7 /* SlideNavigationContorllerAnimator.h */,
+				1B4E7B65C12D872C6FE7479D /* SlideNavigationContorllerAnimatorFade.h */,
+				18F839668828DA6505DD35C4 /* SlideNavigationContorllerAnimatorFade.m */,
+				AEAC8AA3486350404239C795 /* SlideNavigationContorllerAnimatorScale.h */,
+				1122C895B338FB740139E33E /* SlideNavigationContorllerAnimatorScale.m */,
+				C4375B5BABD417636FCC82FB /* SlideNavigationContorllerAnimatorScaleAndFade.h */,
+				BDA5D68B61D964BDFCD5ECB4 /* SlideNavigationContorllerAnimatorScaleAndFade.m */,
+				3A410B1E508C72F1BBF6BECB /* SlideNavigationContorllerAnimatorSlide.h */,
+				838A8B3051F20E9704020716 /* SlideNavigationContorllerAnimatorSlide.m */,
+				AB7F854DE17D989641A16E03 /* SlideNavigationContorllerAnimatorSlideAndFade.h */,
+				3CCE0C4F112B9AB7D8786189 /* SlideNavigationContorllerAnimatorSlideAndFade.m */,
+				948DACEE0CA03BF3A2D5EDA0 /* SlideNavigationController.h */,
+				4993B0DFD1041E2ABEB4DD64 /* SlideNavigationController.m */,
+				98B8E7B50654C3D75AD34511 /* Resources */,
+				DB5D9FCBB42278BADA82C99F /* Support Files */,
+			);
+			path = "iOS-Slide-Menu";
+			sourceTree = "<group>";
+		};
+		D5020BEFBE1D19E143BE034E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				64BF479521F35D71CD45CCAC /* libPods.a */,
+				1AEA60A437719EC4891E4C8A /* libPods-EGOCache.a */,
+				4BB41FB2F86AB73B9C29B136 /* libPods-MBProgressHUD.a */,
+				13C9E1CCD5E127C14403DC20 /* libPods-iOS-Slide-Menu.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB5D9FCBB42278BADA82C99F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1074815B4C371BC6AE0F8817 /* Pods-iOS-Slide-Menu.xcconfig */,
+				F6AF4801A52D4F71A4D58FF7 /* Pods-iOS-Slide-Menu-Private.xcconfig */,
+				6711CFE4C0044A6F37B2D49A /* Pods-iOS-Slide-Menu-dummy.m */,
+				132B8319610A0057349210F9 /* Pods-iOS-Slide-Menu-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-iOS-Slide-Menu";
+			sourceTree = "<group>";
+		};
+		E0EBC3E1A7F92386FF755F2E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8E9052EA62C131F178EABE5A /* Pods-acknowledgements.markdown */,
+				5DF8DADCF00813282DCC7F72 /* Pods-acknowledgements.plist */,
+				32AA97703410F95FD9CFEEEF /* Pods-dummy.m */,
+				E93549D782AAED3A3433DB34 /* Pods-environment.h */,
+				A50805FBE0E34A29B9FEC57F /* Pods-resources.sh */,
+				107116A10FD671A69D07BE54 /* Pods.debug.xcconfig */,
+				97F3D77D60D85DC1D23B7272 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			path = "Target Support Files/Pods";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		6EF57B03A759E9A414BE5A77 /* Headers */ = {
+		A17ED5D637B0B15F00ACAAD9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87685981C561AC2602F3C456 /* SlideNavigationContorllerAnimator.h in Headers */,
-				A726B4DB0D4EA946BCA6D77C /* SlideNavigationContorllerAnimatorFade.h in Headers */,
-				97B45FFD81B7909F8A223D2A /* SlideNavigationContorllerAnimatorScale.h in Headers */,
-				D7F49FCD2BD6C0008A17BE21 /* SlideNavigationContorllerAnimatorScaleAndFade.h in Headers */,
-				57DC4CED62EB1A5FED80E9CB /* SlideNavigationContorllerAnimatorSlide.h in Headers */,
-				8902DF081ED47EE22614BE30 /* SlideNavigationContorllerAnimatorSlideAndFade.h in Headers */,
-				919AB80FCA43ED9D960BD1EB /* SlideNavigationController.h in Headers */,
+				16B3B12E561B265EE0027E35 /* EGOCache.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AE86E1FC7C565EFEDFFB6019 /* Headers */ = {
+		B89FC4DF8E3038CF9541E93C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				967F84B83BD31543C79227A5 /* EGOCache.h in Headers */,
+				2580A3FB866910208E801357 /* SlideNavigationContorllerAnimator.h in Headers */,
+				FA7A7F573C3F2D0A003BEB63 /* SlideNavigationContorllerAnimatorFade.h in Headers */,
+				6D419CAA91ED0863400D7645 /* SlideNavigationContorllerAnimatorScale.h in Headers */,
+				26B6903FCE9D7FDA3BFF3880 /* SlideNavigationContorllerAnimatorScaleAndFade.h in Headers */,
+				B6047190790D4F529B76BA2C /* SlideNavigationContorllerAnimatorSlide.h in Headers */,
+				A716CBC183995C2357A9454D /* SlideNavigationContorllerAnimatorSlideAndFade.h in Headers */,
+				00DDB79A74F62B229FB841E2 /* SlideNavigationController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F78B584A9D417C9A9EF49AC0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75E2720B5F036398EC3E663E /* MBProgressHUD.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		30770D6DB4C30FD9BA91654A /* Pods-EGOCache */ = {
+		2838576FF0C5DDC93155485B /* Pods-iOS-Slide-Menu */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3976136A572DDDA36E189C13 /* Build configuration list for PBXNativeTarget "Pods-EGOCache" */;
+			buildConfigurationList = B7ED78A611DE69F34713747A /* Build configuration list for PBXNativeTarget "Pods-iOS-Slide-Menu" */;
 			buildPhases = (
-				DDE004CAA3CC28654E850AC2 /* Sources */,
-				DA0C7F0C6EAC05AFA50A9DFF /* Frameworks */,
-				AE86E1FC7C565EFEDFFB6019 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-EGOCache";
-			productName = "Pods-EGOCache";
-			productReference = B275DB3BEA8657756E3A4992 /* libPods-EGOCache.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		78FE9CE0B8E49ACE94CF93CA /* Pods-iOS-Slide-Menu */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7DA6DC1C72E3153C457A3904 /* Build configuration list for PBXNativeTarget "Pods-iOS-Slide-Menu" */;
-			buildPhases = (
-				4D030DE3C8DE4B9DC4D82C12 /* Sources */,
-				65C1E945E517B3B0E64BF968 /* Frameworks */,
-				6EF57B03A759E9A414BE5A77 /* Headers */,
+				9E064724B595AA2BD1C47638 /* Sources */,
+				50E7BA015632004E9F7BB935 /* Frameworks */,
+				B89FC4DF8E3038CF9541E93C /* Headers */,
 			);
 			buildRules = (
 			);
@@ -312,107 +357,238 @@
 			);
 			name = "Pods-iOS-Slide-Menu";
 			productName = "Pods-iOS-Slide-Menu";
-			productReference = 4AA8738D887D7396FE40A654 /* libPods-iOS-Slide-Menu.a */;
+			productReference = 13C9E1CCD5E127C14403DC20 /* libPods-iOS-Slide-Menu.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		D9A4E8FC143569913CA916AB /* Pods */ = {
+		426FA04991C2D198484F38B8 /* Pods */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D73152BF8B8F9AAF6117B73E /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildConfigurationList = 52FF3E8980D5D8D3852F3DEA /* Build configuration list for PBXNativeTarget "Pods" */;
 			buildPhases = (
-				677EA044F53E2F3CFBD88567 /* Sources */,
-				FFE23E60DBECBB4415704448 /* Frameworks */,
+				D6B3D0332D1A36F70AE66A14 /* Sources */,
+				B2DBEBB9E4101DEFD1C92BC4 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				FC35D7A501422697722A594E /* PBXTargetDependency */,
-				F26DB36FC6585B08089CF508 /* PBXTargetDependency */,
+				3E723FDBAC2BC0F174E80A59 /* PBXTargetDependency */,
+				F80CE811B238B8F8A84A1503 /* PBXTargetDependency */,
+				12B302E6AC2730F8AD25B1F3 /* PBXTargetDependency */,
 			);
 			name = Pods;
 			productName = Pods;
-			productReference = 39253DA1C41C6F14A4E48029 /* libPods.a */;
+			productReference = 64BF479521F35D71CD45CCAC /* libPods.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		AE2EBADAAF95C266FD585C5E /* Pods-MBProgressHUD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 015244D8690803955338702D /* Build configuration list for PBXNativeTarget "Pods-MBProgressHUD" */;
+			buildPhases = (
+				F6544DA2419E54A89041A714 /* Sources */,
+				2A5292099F4788D693064198 /* Frameworks */,
+				F78B584A9D417C9A9EF49AC0 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-MBProgressHUD";
+			productName = "Pods-MBProgressHUD";
+			productReference = 4BB41FB2F86AB73B9C29B136 /* libPods-MBProgressHUD.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		E9DC57DDAFA29729E1D09895 /* Pods-EGOCache */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BB66ECDFA4F18C81D00BEE4 /* Build configuration list for PBXNativeTarget "Pods-EGOCache" */;
+			buildPhases = (
+				4432E09AB956733D87962629 /* Sources */,
+				220753B42E18DBEB29DA0407 /* Frameworks */,
+				A17ED5D637B0B15F00ACAAD9 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-EGOCache";
+			productName = "Pods-EGOCache";
+			productReference = 1AEA60A437719EC4891E4C8A /* libPods-EGOCache.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6250986C657972E71A41419B /* Project object */ = {
+		4B7B3B4E3253133F4951A6A8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
 			};
-			buildConfigurationList = EB9CA03E3B4DDA2BE3962F7D /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = E6CDC79A14A6B5827EB658D1 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = E0DD09386D801F1D64A4DAA3;
-			productRefGroup = 981A1FDCD01802E9E3E06DAC /* Products */;
+			mainGroup = 0F6E2AB4142C9872533ADA9D;
+			productRefGroup = D5020BEFBE1D19E143BE034E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D9A4E8FC143569913CA916AB /* Pods */,
-				30770D6DB4C30FD9BA91654A /* Pods-EGOCache */,
-				78FE9CE0B8E49ACE94CF93CA /* Pods-iOS-Slide-Menu */,
+				426FA04991C2D198484F38B8 /* Pods */,
+				E9DC57DDAFA29729E1D09895 /* Pods-EGOCache */,
+				AE2EBADAAF95C266FD585C5E /* Pods-MBProgressHUD */,
+				2838576FF0C5DDC93155485B /* Pods-iOS-Slide-Menu */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4D030DE3C8DE4B9DC4D82C12 /* Sources */ = {
+		4432E09AB956733D87962629 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1C80B46ACAA1911134F6515 /* Pods-iOS-Slide-Menu-dummy.m in Sources */,
-				11A1B7622407181E93D07C97 /* SlideNavigationContorllerAnimatorFade.m in Sources */,
-				0515E5C3E44C826ED1CAAADA /* SlideNavigationContorllerAnimatorScale.m in Sources */,
-				4AB6C99DD5313B49E0B2607A /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
-				94AE2686182198DF0176E2AB /* SlideNavigationContorllerAnimatorSlide.m in Sources */,
-				B297B11D99C02152301DDE47 /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
-				16B524E5D9FF91592668B2D1 /* SlideNavigationController.m in Sources */,
+				807D5E308EB413B0C8D155CF /* EGOCache.m in Sources */,
+				94D488E871912426848B6533 /* Pods-EGOCache-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		677EA044F53E2F3CFBD88567 /* Sources */ = {
+		9E064724B595AA2BD1C47638 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5321297EDD1DDA8B11F28583 /* Pods-dummy.m in Sources */,
+				D10C637948B08038D4CE4AF1 /* Pods-iOS-Slide-Menu-dummy.m in Sources */,
+				4EE05633F5A618F0DBFBA662 /* SlideNavigationContorllerAnimatorFade.m in Sources */,
+				7BC2242F7F00BA466424A80E /* SlideNavigationContorllerAnimatorScale.m in Sources */,
+				E60E790DF2C172C2B247F95C /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
+				7219445D488D4B429E5F6D65 /* SlideNavigationContorllerAnimatorSlide.m in Sources */,
+				108AEEFB6296C5CA777838F6 /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
+				A673775EFECB19995C1B7732 /* SlideNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DDE004CAA3CC28654E850AC2 /* Sources */ = {
+		D6B3D0332D1A36F70AE66A14 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C728B8B92A2BF432889AEF9 /* EGOCache.m in Sources */,
-				8D3A84638F06C77E7672F2FF /* Pods-EGOCache-dummy.m in Sources */,
+				C1014393B78916DF30BB6193 /* Pods-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6544DA2419E54A89041A714 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17DDF1F30263D527F6820C13 /* MBProgressHUD.m in Sources */,
+				530C3995EA82EC2D71298694 /* Pods-MBProgressHUD-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F26DB36FC6585B08089CF508 /* PBXTargetDependency */ = {
+		12B302E6AC2730F8AD25B1F3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-iOS-Slide-Menu";
-			target = 78FE9CE0B8E49ACE94CF93CA /* Pods-iOS-Slide-Menu */;
-			targetProxy = 52AF7EA395BAD7970AF2E078 /* PBXContainerItemProxy */;
+			target = 2838576FF0C5DDC93155485B /* Pods-iOS-Slide-Menu */;
+			targetProxy = 83F1E7CEC7BBDC8A04C1C0F7 /* PBXContainerItemProxy */;
 		};
-		FC35D7A501422697722A594E /* PBXTargetDependency */ = {
+		3E723FDBAC2BC0F174E80A59 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-EGOCache";
-			target = 30770D6DB4C30FD9BA91654A /* Pods-EGOCache */;
-			targetProxy = C3CABBC5536AE383D3386305 /* PBXContainerItemProxy */;
+			target = E9DC57DDAFA29729E1D09895 /* Pods-EGOCache */;
+			targetProxy = DA520CAE7B1469DAFEC07E68 /* PBXContainerItemProxy */;
+		};
+		F80CE811B238B8F8A84A1503 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-MBProgressHUD";
+			target = AE2EBADAAF95C266FD585C5E /* Pods-MBProgressHUD */;
+			targetProxy = 23363A286780D635C6CDBB4F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		154930932B2BA65487CE4B9E /* Debug */ = {
+		272F1ED0CF75009206FA6705 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7DBD3A6007BBFFC0744C49A /* Pods-iOS-Slide-Menu-Private.xcconfig */;
+			baseConfigurationReference = 266050FFB0DDD9C46FB06AB8 /* Pods-EGOCache-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-EGOCache/Pods-EGOCache-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		40EE8685D1882ED1D324CB0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6AF4801A52D4F71A4D58FF7 /* Pods-iOS-Slide-Menu-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-iOS-Slide-Menu/Pods-iOS-Slide-Menu-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		43AEE489CA34A67FE1F153FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 107116A10FD671A69D07BE54 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4E28BDDB93745DA619771805 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 266050FFB0DDD9C46FB06AB8 /* Pods-EGOCache-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-EGOCache/Pods-EGOCache-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B33DE05C5E6897EC5E989DD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C46C81827E7E6E1DE51DCB12 /* Pods-MBProgressHUD-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-MBProgressHUD/Pods-MBProgressHUD-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		BA1B4CB6FFF043E30AAF7182 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6AF4801A52D4F71A4D58FF7 /* Pods-iOS-Slide-Menu-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-iOS-Slide-Menu/Pods-iOS-Slide-Menu-prefix.pch";
@@ -426,7 +602,23 @@
 			};
 			name = Debug;
 		};
-		1C5C9F32BE3640ACB5F16C03 /* Debug */ = {
+		BE6E6E68F5553004BA200291 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C46C81827E7E6E1DE51DCB12 /* Pods-MBProgressHUD-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-MBProgressHUD/Pods-MBProgressHUD-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		DA59DCBFF3E3FBBFC87A82E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -465,41 +657,9 @@
 			};
 			name = Debug;
 		};
-		4F790EB9BE0EC459A3DB6F94 /* Debug */ = {
+		ECD5E7AC322CC651CA3F38D9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72EB192FBCE68415CE807BA9 /* Pods.debug.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		6F025F12FC9B207E2F866568 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 993023F260FC331CD14A37CA /* Pods-EGOCache-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-EGOCache/Pods-EGOCache-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		8144411F2572CC3758194CDE /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 99747E10967AEEAEEA46D384 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 97F3D77D60D85DC1D23B7272 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -513,23 +673,7 @@
 			};
 			name = Release;
 		};
-		8521FC479D104E224F45F610 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7DBD3A6007BBFFC0744C49A /* Pods-iOS-Slide-Menu-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-iOS-Slide-Menu/Pods-iOS-Slide-Menu-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		A8CCE637313C334A7E0CC4EC /* Release */ = {
+		F3CA5C9943A52113A76FA628 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -563,62 +707,55 @@
 			};
 			name = Release;
 		};
-		E0DB20F96E21AAE8C967F9BB /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 993023F260FC331CD14A37CA /* Pods-EGOCache-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-EGOCache/Pods-EGOCache-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3976136A572DDDA36E189C13 /* Build configuration list for PBXNativeTarget "Pods-EGOCache" */ = {
+		015244D8690803955338702D /* Build configuration list for PBXNativeTarget "Pods-MBProgressHUD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6F025F12FC9B207E2F866568 /* Debug */,
-				E0DB20F96E21AAE8C967F9BB /* Release */,
+				B33DE05C5E6897EC5E989DD8 /* Debug */,
+				BE6E6E68F5553004BA200291 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7DA6DC1C72E3153C457A3904 /* Build configuration list for PBXNativeTarget "Pods-iOS-Slide-Menu" */ = {
+		3BB66ECDFA4F18C81D00BEE4 /* Build configuration list for PBXNativeTarget "Pods-EGOCache" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				154930932B2BA65487CE4B9E /* Debug */,
-				8521FC479D104E224F45F610 /* Release */,
+				4E28BDDB93745DA619771805 /* Debug */,
+				272F1ED0CF75009206FA6705 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D73152BF8B8F9AAF6117B73E /* Build configuration list for PBXNativeTarget "Pods" */ = {
+		52FF3E8980D5D8D3852F3DEA /* Build configuration list for PBXNativeTarget "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4F790EB9BE0EC459A3DB6F94 /* Debug */,
-				8144411F2572CC3758194CDE /* Release */,
+				43AEE489CA34A67FE1F153FA /* Debug */,
+				ECD5E7AC322CC651CA3F38D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EB9CA03E3B4DDA2BE3962F7D /* Build configuration list for PBXProject "Pods" */ = {
+		B7ED78A611DE69F34713747A /* Build configuration list for PBXNativeTarget "Pods-iOS-Slide-Menu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1C5C9F32BE3640ACB5F16C03 /* Debug */,
-				A8CCE637313C334A7E0CC4EC /* Release */,
+				BA1B4CB6FFF043E30AAF7182 /* Debug */,
+				40EE8685D1882ED1D324CB0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6CDC79A14A6B5827EB658D1 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA59DCBFF3E3FBBFC87A82E7 /* Debug */,
+				F3CA5C9943A52113A76FA628 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 6250986C657972E71A41419B /* Project object */;
+	rootObject = 4B7B3B4E3253133F4951A6A8 /* Project object */;
 }

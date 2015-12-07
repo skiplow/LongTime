@@ -17,6 +17,8 @@
 #define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
 #define AMSlideMenuWithoutStoryboards
 
+#define UMKEY   @"56629a13e0f55a26cc00356d"
+
 
 #ifdef __OBJC__
 
@@ -34,5 +36,6 @@
 
 
 #define personal_image @"Personal.image"
+#define last_date @"Personal.lastdate"
 
 #endif

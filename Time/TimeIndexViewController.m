@@ -216,19 +216,24 @@
     _imagesurl = [NSMutableArray arrayWithArray:tmpArry];
     NSLog(@"count = %lu",(unsigned long)_imagesurl.count);
     if (_imagesurl.count != 0) {
+        NSString * tmpDateString = [[NSUserDefaults standardUserDefaults] stringForKey:last_date];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        newDate = [dateFormatter dateFromString:tmpDateString];
+        [self doPickImage:newDate];
         
-        ALAssetsLibrary *assetLibrary=[[ALAssetsLibrary alloc] init];
-        NSURL *url=[NSURL URLWithString:_imagesurl[_imagesurl.count - 1]];
-        [assetLibrary assetForURL:url resultBlock:^(ALAsset *asset)  {
-            //UIImage *image=[UIImage imageWithCGImage:asset.defaultRepresentation.fullScreenImage];
-            //_imageView.image=image;
-            newDate = [asset valueForProperty:ALAssetPropertyDate];
-            NSLog(@"time = %@",newDate);
-            [self doPickImage:newDate];
-            
-        }failureBlock:^(NSError *error) {
-            NSLog(@"error=%@",error);
-        }];
+//        ALAssetsLibrary *assetLibrary=[[ALAssetsLibrary alloc] init];
+//        NSURL *url=[NSURL URLWithString:_imagesurl[_imagesurl.count - 1]];
+//        [assetLibrary assetForURL:url resultBlock:^(ALAsset *asset)  {
+//            //UIImage *image=[UIImage imageWithCGImage:asset.defaultRepresentation.fullScreenImage];
+//            //_imageView.image=image;
+//            newDate = [asset valueForProperty:ALAssetPropertyDate];
+//            NSLog(@"time = %@",newDate);
+//            [self doPickImage:newDate];
+//            
+//        }failureBlock:^(NSError *error) {
+//            NSLog(@"error=%@",error);
+//        }];
 
     }
     else
@@ -270,8 +275,15 @@
             //本地化存储
             NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
             [userDefaults setValue:_imagesurl forKey:personal_image];
-            [userDefaults synchronize];
             NSLog(@"end %lu",(unsigned long)_imageFrames.count);
+            
+            
+            NSDate *now = [NSDate date];
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+            NSString *strDate = [dateFormatter stringFromDate:now];
+            [userDefaults setValue:strDate forKey:last_date];
+            [userDefaults synchronize];
             
         }
         /* 页面跳转 */

@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Time/TimeIndexViewController.m"
-            timestampString = "469938080.91111"
+            timestampString = "470976213.138753"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "285"
-            endingLineNumber = "285"
+            startingLineNumber = "297"
+            endingLineNumber = "297"
             landmarkName = "-doPickImage:"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Time/TimeIndexViewController.m"
-            timestampString = "469938080.91111"
+            timestampString = "470976213.138753"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "284"
-            endingLineNumber = "284"
+            startingLineNumber = "296"
+            endingLineNumber = "296"
             landmarkName = "-doPickImage:"
             landmarkType = "5">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Time/FacePicker/FacePicker.m"
-            timestampString = "469424243.118382"
+            timestampString = "470980410.970799"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "+pickFaceFromPhotoAlbum:NewDate:outPutArry:outPutImageArry:animateTransitions:withPicPicked:withProgress:withCallbackBlock:"
             landmarkType = "5">
          </BreakpointContent>
@@ -154,27 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Time/TimeIndexViewController.m"
-            timestampString = "469938080.91111"
+            timestampString = "470976213.138753"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "218"
             endingLineNumber = "218"
-            landmarkName = "-takepic"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Time/TimeIndexViewController.m"
-            timestampString = "469938080.91111"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
             landmarkName = "-takepic"
             landmarkType = "5">
          </BreakpointContent>
@@ -202,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Time/FacePicker/FacePicker.m"
-            timestampString = "469348739.751894"
+            timestampString = "470980410.970799"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "+pickFaceFromPhotoAlbum:NewDate:outPutArry:outPutImageArry:animateTransitions:withPicPicked:withProgress:withCallbackBlock:"
             landmarkType = "5">
          </BreakpointContent>
@@ -218,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Time/PicSelect/PicSelectViewController.m"
-            timestampString = "470916522.209163"
+            timestampString = "470994847.00821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "434"
-            endingLineNumber = "434"
+            startingLineNumber = "450"
+            endingLineNumber = "450"
             landmarkName = "-collectionView:numberOfItemsInSection:"
             landmarkType = "5">
          </BreakpointContent>
@@ -234,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Time/PicSelect/PicSelectViewController.m"
-            timestampString = "470913995.189814"
+            timestampString = "470994847.00821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -250,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Time/PicSelect/PicSelectViewController.m"
-            timestampString = "470916522.209163"
+            timestampString = "470994847.00821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "278"
-            endingLineNumber = "278"
+            startingLineNumber = "293"
+            endingLineNumber = "293"
             landmarkName = "-savePictoImageFrames"
             landmarkType = "5">
          </BreakpointContent>
@@ -266,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Time/PicSelect/PicSelectViewController.m"
-            timestampString = "470916522.209163"
+            timestampString = "470994847.00821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "282"
-            endingLineNumber = "282"
+            startingLineNumber = "297"
+            endingLineNumber = "297"
             landmarkName = "-savePictoImageFrames"
             landmarkType = "5">
          </BreakpointContent>
@@ -282,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Time/PicSelect/PicSelectViewController.m"
-            timestampString = "470916522.209163"
+            timestampString = "470994847.00821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "445"
-            endingLineNumber = "445"
+            startingLineNumber = "461"
+            endingLineNumber = "461"
             landmarkName = "-collectionView:cellForItemAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>

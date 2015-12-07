@@ -61,17 +61,22 @@ NSInteger groupCount ;
                         NSDate* time = [result valueForProperty:ALAssetPropertyDate];
                         
                         NSComparisonResult Timeresult = [time compare:newDate];
-                        if (time != Nil && (Timeresult == NSOrderedDescending || newDate == nil)) {
+                        
+                        //图片宽度必须是16的倍数要不不能生产视频
+                        int imagewidth = (int)result.defaultRepresentation.dimensions.width;
+                        if (time != Nil && (Timeresult == NSOrderedDescending || newDate == nil) && imagewidth % 16 == 0) {
                             
                             NSString *urlstr=[NSString stringWithFormat:@"%@",result.defaultRepresentation.url];//图片的url
                             UIImage *uiImageFull =[UIImage imageWithCGImage:result.aspectRatioThumbnail];
                             if ([self IsPicHaveFace:uiImageFull]) {
+                               
+       
                                 [outPutArry addObject:urlstr];
-                                //[imageArry addObject:uiImage];
-
                                 if (callPickImageBlock) {
                                     callPickImageBlock(uiImageFull);
                                 }
+                                
+                                //[imageArry addObject:uiImage];
 
                             }
                             

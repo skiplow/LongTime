@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                     </imageView>
                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="play" translatesAutoresizingMaskIntoConstraints="NO" id="2v7-kX-xII">
-                        <rect key="frame" x="4" y="66" width="30" height="30"/>
+                        <rect key="frame" x="35" y="35" width="30" height="30"/>
                     </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

@@ -9,6 +9,7 @@
 #import "ResourceViewController.h"
 #import "ResourceCollectionViewCell.h"
 #import "ImageShowViewController.h"
+#import "MBProgressHUD+NJ.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVAsset.h>
@@ -34,7 +35,14 @@
     _imageFramesType = [[NSMutableArray alloc] init];
     _imageFramesUrl = [[NSMutableArray alloc] init];
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
-    [layout setItemSize:CGSizeMake(100, 100)];//设置cell的尺寸
+    if (SCREEN_WIDTH > 320) {
+        [layout setItemSize:CGSizeMake(100, 100)];//设置cell的尺寸
+    }
+    else
+    {
+        [layout setItemSize:CGSizeMake(90, 90)];//设置cell的尺寸
+    }
+
     [layout setScrollDirection:UICollectionViewScrollDirectionVertical];//设置其布局方向
     layout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);//设置其边界
     _myCollectionview = [[UICollectionView alloc] initWithFrame:CGRectMake(0,0, SCREEN_WIDTH, SCREEN_HEIGHT) collectionViewLayout:layout];
@@ -124,6 +132,8 @@
             
         }
     }
+    // 移除HUD
+    [MBProgressHUD hideHUD];
 }
 
 
@@ -167,6 +177,7 @@
 {
     self.images = [[NSMutableArray alloc] init];
     self.videoes = [[NSMutableArray alloc] init];
+    [MBProgressHUD showMessage:@"正在加载数据..."];
     dispatch_async(dispatch_get_main_queue(), ^{
         
         @autoreleasepool {
