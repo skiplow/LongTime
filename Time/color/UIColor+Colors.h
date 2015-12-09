@@ -281,4 +281,11 @@ typedef enum
 + (UIColor *) DDBlack333;
 
 
+/* LongTime */
++ (UIColor *) LTDayRedBackGround;
++ (UIColor *) LTNightRedBackGround;
++ (UIColor *) LTDayYellowBackGround;
++ (UIColor *) LTNightPurpleBackGround;
+
+
 @end

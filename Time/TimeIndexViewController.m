@@ -24,7 +24,6 @@
     int count;
     NSDate * newDate;
     BOOL gifShow;
-    BOOL isDayTime;
 }
 //@property (strong, nonatomic) ALAssetsLibrary *MyAssetsLibrary;
 @property (strong, nonatomic) NSMutableArray * imagesurl;
@@ -69,7 +68,7 @@
     
     _glassBallView = [[[NSBundle mainBundle] loadNibNamed:@"GlassBall" owner:self options:nil] lastObject];
     [_glassBallView setFrame:CGRectMake(SCREEN_WIDTH / 2 - (177 / 2), SCREEN_HEIGHT / 2 - 190, 177, 190)];
-    if (isDayTime) {
+    if ([TimeUtils isDayTime]) {
         [_glassBallView.BackGroundImage setImage:[UIImage imageNamed:@"BLQ"]];
     }
     else
@@ -81,18 +80,18 @@
     [self.view addSubview:_glassBallView];
     
     _startButton = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH / 2 - 35, SCREEN_HEIGHT - 150, 70, 70)];
-    if (isDayTime) {
-        _startButton.backgroundColor = [UIColor colorWithRed:234/255.0f green:71/255.0f blue:79/255.0f alpha:1.0f];
+    if ([TimeUtils isDayTime]) {
+        _startButton.backgroundColor = [UIColor LTDayRedBackGround];
     }
     else
     {
-       _startButton.backgroundColor = [UIColor colorWithRed:142/255.0f green:44/255.0f blue:72/255.0f alpha:1.0f];
+       _startButton.backgroundColor = [UIColor LTNightRedBackGround];
     }
     
     _startButton.layer.cornerRadius = _startButton.frame.size.width / 2;
     _startButton.layer.masksToBounds = YES;
     [_startButton setTitle:@"开始" forState:UIControlStateNormal];
-    [_startButton setTitleColor:[UIColor colorWithRed:255/255.0f green:252/255.0f blue:231/255.0f alpha:1.0f] forState:UIControlStateNormal];
+    [_startButton setTitleColor:[UIColor LTDayYellowBackGround] forState:UIControlStateNormal];
     _startButton.titleLabel.font = [UIFont fontWithName:@"MarkerFelt-Wide" size:16];
     [_startButton addTarget:self action:@selector(startPicHandle) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_startButton];
@@ -110,11 +109,11 @@
 //    [self.view addSubview:_moreButton];
     
     
-    if (isDayTime) {
-        [self.view setBackgroundColor:[UIColor colorWithRed:255/255.0f green:252/255.0f blue:231/255.0f alpha:1.0f]];
+    if ([TimeUtils isDayTime]) {
+        [self.view setBackgroundColor:[UIColor LTDayYellowBackGround]];
     }
     else{
-        [self.view setBackgroundColor:[UIColor colorWithRed:68/255.0f green:43/255.0f blue:59/255.0f alpha:1.0f]];
+        [self.view setBackgroundColor:[UIColor LTNightPurpleBackGround]];
     }
     
     //[self startPicHandle];
@@ -131,13 +130,6 @@
     int year = (int)[dateComponent year];
     int month = (int)[dateComponent month];
     int day = (int)[dateComponent day];
-    int hour = (int)[dateComponent hour];
-    if (hour >= 6 && hour < 18) {
-        isDayTime = TRUE;
-    }
-    else{
-        isDayTime = FALSE;
-    }
 
     NSString * timeString = [NSString stringWithFormat:@"%d 年 %d 月 %d 日",year,month,day];
     
@@ -158,7 +150,7 @@
     self.title = timeString;
     //[self.titleLabel setTextAlignment:NSTextAlignmentCenter];
     //[self.titleLabel setFont:[UIFont fontWithName:@"MarkerFelt-Wide" size:16]];
-    if (isDayTime) {
+    if ([TimeUtils isDayTime]) {
         [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"MarkerFelt-Wide" size:16],NSForegroundColorAttributeName:[UIColor colorWithRed:234/255.0f green:71/255.0f blue:79/255.0f alpha:1.0f]}];
     }
     else

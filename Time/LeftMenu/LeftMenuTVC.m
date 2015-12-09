@@ -25,7 +25,14 @@
     // Initilizing data souce
     self.tableData = [@[@"首页",@"完成库"] mutableCopy];
     //[self.view setBackgroundColor:[UIColor colorWithRed:255/255.0f green:252/255.0f blue:231/255.0f alpha:1.0f]];
-    [self.view setBackgroundColor:[UIColor colorWithRed:68/255.0f green:43/255.0f blue:59/255.0f alpha:1.0f]];
+    if ([TimeUtils isDayTime]) {
+        [self.view setBackgroundColor:[UIColor LTDayYellowBackGround]];
+    }
+    else
+    {
+        [self.view setBackgroundColor:[UIColor LTNightPurpleBackGround]];
+    }
+
 }
 
 #pragma mark - TableView Datasource

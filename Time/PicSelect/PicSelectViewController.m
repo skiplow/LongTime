@@ -43,7 +43,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view setBackgroundColor:[UIColor whiteColor]];
+    if ([TimeUtils isDayTime]) {
+        [self.view setBackgroundColor:[UIColor LTDayYellowBackGround]];
+    }
+    else
+    {
+        [self.view setBackgroundColor:[UIColor LTNightPurpleBackGround]];
+    }
     //self.title = @"照片选择";
     deleteIndex = 0;
     NSArray * tmpArry = [[NSUserDefaults standardUserDefaults] arrayForKey:personal_image];
@@ -66,7 +72,10 @@
     [layout setScrollDirection:UICollectionViewScrollDirectionVertical];//设置其布局方向
     layout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);//设置其边界
     _myPicCollectionview = [[UICollectionView alloc] initWithFrame:CGRectMake(0,0, SCREEN_WIDTH, SCREEN_HEIGHT - 44) collectionViewLayout:layout];
-    _myPicCollectionview.backgroundColor = [UIColor whiteColor];
+
+    [_myPicCollectionview setBackgroundColor:[UIColor clearColor]];
+
+    
     _myPicCollectionview.delegate = (id)self;
     _myPicCollectionview.dataSource = (id)self;
     [_myPicCollectionview registerClass:[PicCollectionViewCell class] forCellWithReuseIdentifier:cellNibName_PicCollectionViewCell];

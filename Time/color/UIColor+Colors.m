@@ -946,6 +946,27 @@
 }
 
 
++ (UIColor *) LTDayRedBackGround
+{
+    return [UIColor colorWithRed:234/255.0f green:71/255.0f blue:79/255.0f alpha:1.0f];
+}
+
++ (UIColor *) LTNightRedBackGround
+{
+    return [UIColor colorWithRed:142/255.0f green:44/255.0f blue:72/255.0f alpha:1.0f];
+
+}
+
++ (UIColor *) LTDayYellowBackGround;
+{
+    return [UIColor colorWithRed:255/255.0f green:252/255.0f blue:231/255.0f alpha:1.0f];
+}
+
++ (UIColor *) LTNightPurpleBackGround;
+{
+    return [UIColor colorWithRed:68/255.0f green:43/255.0f blue:59/255.0f alpha:1.0f];
+}
+
 
 + (UIImage *) createImageWithColor: (UIColor *) color
 {

@@ -10,18 +10,30 @@
 #import "ResourceCollectionViewCell.h"
 #import "ImageShowViewController.h"
 #import "MBProgressHUD+NJ.h"
+#import "ALAssetsLibrary+CustomPhotoAlbum.h"
+#import "CEMovieMaker.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVAsset.h>
 #import <AVFoundation/AVAssetImageGenerator.h>
 
+
+
+
+
 @interface ResourceViewController ()<UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource>
+{
+        NSMutableArray * audioMixParams;
+}
 @property (strong, nonatomic) NSMutableArray * images;
 @property (strong, nonatomic) NSMutableArray * videoes;
 @property (strong, nonatomic) NSMutableArray * imageFrames;
 @property (strong, nonatomic) NSMutableArray * imageFramesType;
 @property (strong, nonatomic) NSMutableArray * imageFramesUrl;
 @property (strong, nonatomic) UICollectionView *myCollectionview;
+
+@property (nonatomic, strong) NSURL * mixURL;
+@property (nonatomic, strong) NSURL * theEndVideoURL;
 @end
 
 @implementation ResourceViewController
@@ -29,7 +41,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.view setBackgroundColor:[UIColor colorWithRed:255/255.0f green:252/255.0f blue:231/255.0f alpha:1.0f]];
+    if ([TimeUtils isDayTime]) {
+        [self.view setBackgroundColor:[UIColor LTDayYellowBackGround]];
+    }
+    else
+    {
+        [self.view setBackgroundColor:[UIColor LTNightPurpleBackGround]];
+    }
     
     _imageFrames = [[NSMutableArray alloc] init];
     _imageFramesType = [[NSMutableArray alloc] init];
@@ -200,8 +218,10 @@
                     }
                     else if([[result valueForProperty:ALAssetPropertyType] isEqualToString:ALAssetTypeVideo])
                     {
-                        NSString *urlstr=[NSString stringWithFormat:@"%@",result.defaultRepresentation.url];//图片的url
+                        NSString *urlstr=[NSString stringWithFormat:@"%@",result.defaultRepresentation.url];//视频的url
                         [self.videoes addObject:result.defaultRepresentation.url];
+                        //[self addmusic:result.defaultRepresentation.url];
+                        [self mergeAudio:result.defaultRepresentation.url];
                     }
                 }
             };
@@ -305,5 +325,228 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void)mergeAudio:(NSURL *)videoPath
+{
+    AVURLAsset* videoAsset;
+    AVURLAsset* audioAsset;
+    //AVURLAsset* audioAssetBackGround;
+    
+    AVMutableComposition* mixComposition = [AVMutableComposition composition];
+    
+//    //声音采集
+//    audioAssetBackGround =[[AVURLAsset alloc] initWithURL:videoPath options:nil];
+//    CMTimeRange audio_timeRangeBackGround =CMTimeRangeMake(kCMTimeZero,videoAsset.duration);//声音长度截取范围==视频长度
+//    AVMutableCompositionTrack * c_compositionAudioTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
+//    [c_compositionAudioTrack insertTimeRange:audio_timeRangeBackGround ofTrack:[[audioAssetBackGround tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0] atTime:kCMTimeZero error:nil];
+    
+    NSURL *video_url = videoPath;
+    videoAsset = [[AVURLAsset alloc]initWithURL:video_url options:nil];
+    CMTimeRange video_timeRange = CMTimeRangeMake(kCMTimeZero,videoAsset.duration);
+    
+    AVMutableCompositionTrack *a_compositionVideoTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeVideo preferredTrackID:kCMPersistentTrackID_Invalid];
+    [a_compositionVideoTrack insertTimeRange:video_timeRange ofTrack:[[videoAsset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0] atTime:kCMTimeZero error:nil];
+    
+    audioAsset = [[AVURLAsset alloc]initWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"warm-interlude" ofType:@"mp3"]] options:nil];
+    CMTimeRange audio_timeRange = CMTimeRangeMake(kCMTimeZero, videoAsset.duration);
+    
+    AVMutableCompositionTrack *b_compositionAudioTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
+    [b_compositionAudioTrack insertTimeRange:audio_timeRange ofTrack:[[audioAsset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0] atTime:kCMTimeZero error:nil];
+    
+
+    
+    NSArray *dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docsDir = [dirPaths objectAtIndex:0];
+    NSString *outputFilePath = [docsDir stringByAppendingPathComponent:[NSString stringWithFormat:@"dub.mov"]];
+    NSURL *outputFileUrl = [NSURL fileURLWithPath:outputFilePath];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:outputFilePath]){
+        [[NSFileManager defaultManager] removeItemAtPath:outputFilePath error:nil];
+    }
+    AVAssetExportSession* _assetExport = [[AVAssetExportSession alloc] initWithAsset:mixComposition presetName:AVAssetExportPresetHighestQuality];
+    _assetExport.outputFileType = @"com.apple.quicktime-movie";
+    _assetExport.outputURL = outputFileUrl;
+    
+    [_assetExport exportAsynchronouslyWithCompletionHandler:
+     ^(void ) {
+         dispatch_async(dispatch_get_main_queue(), ^{
+             // Do export finish stuff
+             NSURL*url = [NSURL fileURLWithPath:outputFilePath];
+             [self viewMovieAtUrl:url];
+         });
+     }];
+}
+//抽取原视频的音频与需要的音乐混合
+-(void)addmusic:(NSURL *) videoUrl
+{
+    AVMutableComposition *composition =[AVMutableComposition composition];
+    audioMixParams =[[NSMutableArray alloc] initWithObjects:nil];
+    
+    //录制的视频
+    NSURL *video_inputFileUrl = videoUrl;
+    AVURLAsset *songAsset =[AVURLAsset URLAssetWithURL:video_inputFileUrl options:nil];
+    CMTime startTime =CMTimeMakeWithSeconds(0,songAsset.duration.timescale);
+    CMTime trackDuration =songAsset.duration;
+    
+    //获取视频中的音频素材
+    [self setUpAndAddAudioAtPath:video_inputFileUrl toComposition:composition start:startTime dura:trackDuration offset:CMTimeMake(14*44100,44100)];
+    
+    //本地要插入的音乐
+    NSString *bundleDirectory =[[NSBundle mainBundle] bundlePath];
+    NSString *path = [bundleDirectory stringByAppendingPathComponent:@"warm-interlude.mp3"];
+    NSURL *assetURL2 =[NSURL fileURLWithPath:path];
+    //获取设置完的本地音乐素材
+    [self setUpAndAddAudioAtPath:assetURL2 toComposition:composition start:startTime dura:trackDuration offset:CMTimeMake(0,44100)];
+    
+    //创建一个可变的音频混合
+    AVMutableAudioMix *audioMix =[AVMutableAudioMix audioMix];
+    audioMix.inputParameters =[NSArray arrayWithArray:audioMixParams];//从数组里取出处理后的音频轨道参数
+    
+    //创建一个输出
+    AVAssetExportSession *exporter =[[AVAssetExportSession alloc]
+                                     initWithAsset:composition
+                                     presetName:AVAssetExportPresetAppleM4A];
+    exporter.audioMix = audioMix;
+    exporter.outputFileType=@"com.apple.m4a-audio";
+    NSString* fileName =[NSString stringWithFormat:@"%@.mov",@"overMix"];
+    //输出路径
+    NSString *exportFile =[NSString stringWithFormat:@"%@/%@",[self getLibarayPath], fileName];
+    
+    if([[NSFileManager defaultManager]fileExistsAtPath:exportFile]) {
+        [[NSFileManager defaultManager]removeItemAtPath:exportFile error:nil];
+    }
+    NSLog(@"是否在主线程1%d",[NSThread isMainThread]);
+    NSLog(@"输出路径===%@",exportFile);
+    
+    NSURL *exportURL =[NSURL fileURLWithPath:exportFile];
+    exporter.outputURL = exportURL;
+    self.mixURL =exportURL;
+
+    [exporter exportAsynchronouslyWithCompletionHandler:^{
+        int exportStatus =(int)exporter.status;
+        switch (exportStatus){
+            caseAVAssetExportSessionStatusFailed:{
+                NSError *exportError =exporter.error;
+                NSLog(@"错误，信息: %@", exportError);
+                break;
+            }
+            caseAVAssetExportSessionStatusCompleted:{
+                NSLog(@"是否在主线程2%d",[NSThread isMainThread]);
+                NSLog(@"成功");
+                //最终混合
+                [self theVideoWithMixMusic:videoUrl];
+                break;
+            }
+        }
+    }];
+    
+}
+
+//最终音频和视频混合
+-(void)theVideoWithMixMusic:(NSURL *)videoUrl
+{
+    NSError *error =nil;
+    NSFileManager *fileMgr =[NSFileManager defaultManager];
+    NSString *documentsDirectory =[NSHomeDirectory()
+                                   stringByAppendingPathComponent:@"Documents"];
+    NSString *videoOutputPath =[documentsDirectory stringByAppendingPathComponent:@"test_output.mp4"];
+    if ([fileMgr removeItemAtPath:videoOutputPath error:&error]!=YES) {
+        NSLog(@"无法删除文件，错误信息：%@",[error localizedDescription]);
+    }
+    
+    //声音来源路径（最终混合的音频）
+    NSURL   *audio_inputFileUrl =self.mixURL;
+    
+    //视频来源路径
+    NSURL   *video_inputFileUrl = videoUrl;
+    
+    //最终合成输出路径
+    NSString *outputFilePath =[documentsDirectory stringByAppendingPathComponent:@"final_video.mp4"];
+    NSURL   *outputFileUrl = [NSURL fileURLWithPath:outputFilePath];
+    
+    if([[NSFileManager defaultManager]fileExistsAtPath:outputFilePath])
+        [[NSFileManager defaultManager]removeItemAtPath:outputFilePath error:nil];
+    
+    CMTime nextClipStartTime =kCMTimeZero;
+    
+    //创建可变的音频视频组合
+    AVMutableComposition* mixComposition =[AVMutableComposition composition];
+    
+    
+    //视频采集
+    AVURLAsset* videoAsset =[[AVURLAsset alloc] initWithURL:video_inputFileUrl options:nil];
+    CMTimeRange video_timeRange =CMTimeRangeMake(kCMTimeZero,videoAsset.duration);
+    AVMutableCompositionTrack * a_compositionVideoTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeVideo preferredTrackID:kCMPersistentTrackID_Invalid];
+    [a_compositionVideoTrack insertTimeRange:video_timeRange ofTrack:[[videoAsset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0]atTime:nextClipStartTime error:nil];
+    
+    //声音采集
+    AVURLAsset* audioAsset =[[AVURLAsset alloc] initWithURL:audio_inputFileUrl options:nil];
+    CMTimeRange audio_timeRange =CMTimeRangeMake(kCMTimeZero,videoAsset.duration);//声音长度截取范围==视频长度
+    AVMutableCompositionTrack * b_compositionAudioTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
+    [b_compositionAudioTrack insertTimeRange:audio_timeRange ofTrack:[[audioAsset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0]atTime:nextClipStartTime error:nil];
+    
+    //创建一个输出
+    AVAssetExportSession* _assetExport =[[AVAssetExportSession alloc] initWithAsset:mixComposition presetName:AVAssetExportPresetMediumQuality];
+    _assetExport.outputFileType =AVFileTypeQuickTimeMovie;
+    _assetExport.outputURL =outputFileUrl;
+    _assetExport.shouldOptimizeForNetworkUse=YES;
+    self.theEndVideoURL = outputFileUrl;
+    
+    [_assetExport exportAsynchronouslyWithCompletionHandler:
+     ^(void ) {
+         //播放
+         NSURL*url = [NSURL fileURLWithPath:outputFilePath];
+         //         MPMoviePlayerViewController *theMovie =[[MPMoviePlayerViewController alloc] initWithContentURL:url];
+         //         //[self presentMoviePlayerViewController Animated:theMovie];
+         //         theMovie.moviePlayer.movieSourceType=MPMovieSourceTypeFile;
+         //         [theMovie.moviePlayer play];
+         [self viewMovieAtUrl:url];
+     }
+     ];
+    NSLog(@"完成！输出路径==%@",outputFilePath);
+}
+
+//通过文件路径建立和添加音频素材
+- (void)setUpAndAddAudioAtPath:(NSURL*)assetURL toComposition:(AVMutableComposition*)composition start:(CMTime)start dura:(CMTime)dura offset:(CMTime)offset{
+    
+    AVURLAsset *songAsset =[AVURLAsset URLAssetWithURL:assetURL options:nil];
+    
+    AVMutableCompositionTrack *track =[composition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
+    AVAssetTrack *sourceAudioTrack =[[songAsset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0];
+    
+    NSError *error =nil;
+    BOOL ok =NO;
+    
+    CMTime startTime = start;
+    CMTime trackDuration = dura;
+    CMTimeRange tRange =CMTimeRangeMake(startTime,trackDuration);
+    
+    //设置音量
+    //AVMutableAudioMixInputParameters（输入参数可变的音频混合）
+    //audioMixInputParametersWithTrack（音频混音输入参数与轨道）
+    AVMutableAudioMixInputParameters *trackMix =[AVMutableAudioMixInputParameters audioMixInputParametersWithTrack:track];
+    [trackMix setVolume:0.8f atTime:startTime];
+    
+    //素材加入数组
+    [audioMixParams addObject:trackMix];
+    
+    //Insert audio into track  //offsetCMTimeMake(0, 44100)
+    ok = [track insertTimeRange:tRange ofTrack:sourceAudioTrack atTime:kCMTimeInvalid error:&error];
+}
+
+#pragma mark - 保存路径
+-(NSString*)getLibarayPath
+{
+    NSFileManager *fileManager =[NSFileManager defaultManager];
+    
+    NSArray* paths =NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
+    NSString* path = [paths objectAtIndex:0];
+    
+    NSString *movDirectory = [path stringByAppendingPathComponent:@"tmpMovMix"];
+    
+    [fileManager createDirectoryAtPath:movDirectory withIntermediateDirectories:YES attributes:nil error:nil];
+    
+    return movDirectory;
+    
+}
 
 @end

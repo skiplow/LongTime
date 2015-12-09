@@ -8,12 +8,12 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
-#import "UMSocial.h"
-#import "UMSocialWechatHandler.h"
-#import "UMSocialQQHandler.h"
-#import "UMSocialSinaHandler.h"
-#import "MobClick.h"
-#import "UMessage.h"
+//#import "UMSocial.h"
+//#import "UMSocialWechatHandler.h"
+//#import "UMSocialQQHandler.h"
+//#import "UMSocialSinaHandler.h"
+//#import "MobClick.h"
+//#import "UMessage.h"
 
 @interface AppDelegate ()
 
@@ -31,11 +31,11 @@
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [UMessage startWithAppkey:UMKEY launchOptions:launchOptions];
-    [MobClick startWithAppkey:UMKEY reportPolicy:BATCH   channelId:nil];
-    /* 更新提醒 */
-    [MobClick checkUpdate];
-    [UMSocialData setAppKey:UMKEY];
+//    [UMessage startWithAppkey:UMKEY launchOptions:launchOptions];
+//    [MobClick startWithAppkey:UMKEY reportPolicy:BATCH   channelId:nil];
+//    /* 更新提醒 */
+//    [MobClick checkUpdate];
+//    [UMSocialData setAppKey:UMKEY];
     
     return YES;
 }

@@ -23,7 +23,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    if ([TimeUtils isDayTime]) {
+        [self.view setBackgroundColor:[UIColor LTDayYellowBackGround]];
+    }
+    else
+    {
+        [self.view setBackgroundColor:[UIColor LTNightPurpleBackGround]];
+    }
     self.title = @"拼图";
 
     

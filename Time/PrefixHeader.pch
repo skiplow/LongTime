@@ -25,6 +25,7 @@
 #import "UIImageView+WebCache.h"
 #import "UIColor+Colors.h"
 #import "UIFont+Fonts.h"
+#import "TimeUtils.h"
 
 #endif
 
@@ -37,5 +38,6 @@
 
 #define personal_image @"Personal.image"
 #define last_date @"Personal.lastdate"
+#define day_or_night @"main.dayornight"
 
 #endif
