@@ -39,5 +39,7 @@
 #define personal_image @"Personal.image"
 #define last_date @"Personal.lastdate"
 #define day_or_night @"main.dayornight"
+#define first_in_selectimage_view @"Personal.firstinselect"
+#define first_in_puzzle_view @"Personal.firstinpuzzle"
 
 #endif

@@ -257,7 +257,7 @@
             if (tmpProgress > 50.0 && tmpProgress < 60.0 && gifShow == FALSE) {
                 _imageGifView = [[GIFImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH / 2 - 100 , SCREEN_HEIGHT - 200, 200, 150)];
                 [self.view addSubview:_imageGifView];
-                _imageGifView.image = [GIFImage imageNamed:@"whalespin.gif"];
+                _imageGifView.image = [GIFImage imageNamed:@"whalespinclear.gif"];
                 gifShow = TRUE;
             }
         });

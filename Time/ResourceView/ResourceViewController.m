@@ -221,7 +221,7 @@
                         NSString *urlstr=[NSString stringWithFormat:@"%@",result.defaultRepresentation.url];//视频的url
                         [self.videoes addObject:result.defaultRepresentation.url];
                         //[self addmusic:result.defaultRepresentation.url];
-                        [self mergeAudio:result.defaultRepresentation.url];
+                        //[self mergeAudio:result.defaultRepresentation.url];
                     }
                 }
             };

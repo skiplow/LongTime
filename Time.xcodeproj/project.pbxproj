@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A019EECF1C17D43100BDDF1E /* whalespinclear.gif in Resources */ = {isa = PBXBuildFile; fileRef = A019EECE1C17D43100BDDF1E /* whalespinclear.gif */; };
+		A019EED31C1816E200BDDF1E /* ExplainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A019EED21C1816E200BDDF1E /* ExplainViewController.m */; };
+		A019EED91C18205B00BDDF1E /* CMPopTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = A019EED61C18205B00BDDF1E /* CMPopTipView.m */; };
+		A019EEDA1C18205B00BDDF1E /* TipMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = A019EED81C18205B00BDDF1E /* TipMaskView.m */; };
 		A01D86961BF2D9BE003B28A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A01D86951BF2D9BE003B28A4 /* main.m */; };
 		A01D86991BF2D9BE003B28A4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A01D86981BF2D9BE003B28A4 /* AppDelegate.m */; };
 		A01D869C1BF2D9BE003B28A4 /* Time.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A01D869A1BF2D9BE003B28A4 /* Time.xcdatamodeld */; };
@@ -59,7 +63,6 @@
 		A0BA03231C10471900F5D9DA /* ImageShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BA03221C10471900F5D9DA /* ImageShowViewController.m */; };
 		A0BA713D1BFC6E800058D92F /* GIFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BA713A1BFC6E800058D92F /* GIFImage.m */; };
 		A0BA713E1BFC6E810058D92F /* GIFImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BA713C1BFC6E800058D92F /* GIFImageView.m */; };
-		A0BA71401BFC6EA00058D92F /* whalespin.gif in Resources */ = {isa = PBXBuildFile; fileRef = A0BA713F1BFC6EA00058D92F /* whalespin.gif */; };
 		A0BA714B1BFDC0850058D92F /* InteractionTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BA71431BFDC0850058D92F /* InteractionTransitionAnimation.m */; };
 		A0BA714C1BFDC0850058D92F /* InteractiveTrasitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BA71451BFDC0850058D92F /* InteractiveTrasitionAnimation.m */; };
 		A0BA714D1BFDC0850058D92F /* PopTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BA71481BFDC0850058D92F /* PopTransition.m */; };
@@ -93,6 +96,13 @@
 /* Begin PBXFileReference section */
 		32C7192E3C05ED2608B6C915 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		3892C11DD73EE3A059F0505B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A019EECE1C17D43100BDDF1E /* whalespinclear.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = whalespinclear.gif; sourceTree = "<group>"; };
+		A019EED11C1816E200BDDF1E /* ExplainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExplainViewController.h; sourceTree = "<group>"; };
+		A019EED21C1816E200BDDF1E /* ExplainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExplainViewController.m; sourceTree = "<group>"; };
+		A019EED51C18205B00BDDF1E /* CMPopTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMPopTipView.h; sourceTree = "<group>"; };
+		A019EED61C18205B00BDDF1E /* CMPopTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMPopTipView.m; sourceTree = "<group>"; };
+		A019EED71C18205B00BDDF1E /* TipMaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipMaskView.h; sourceTree = "<group>"; };
+		A019EED81C18205B00BDDF1E /* TipMaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipMaskView.m; sourceTree = "<group>"; };
 		A01D86901BF2D9BE003B28A4 /* Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Time.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A01D86941BF2D9BE003B28A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A01D86951BF2D9BE003B28A4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -188,7 +198,6 @@
 		A0BA713A1BFC6E800058D92F /* GIFImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIFImage.m; sourceTree = "<group>"; };
 		A0BA713B1BFC6E800058D92F /* GIFImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIFImageView.h; sourceTree = "<group>"; };
 		A0BA713C1BFC6E800058D92F /* GIFImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIFImageView.m; sourceTree = "<group>"; };
-		A0BA713F1BFC6EA00058D92F /* whalespin.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = whalespin.gif; sourceTree = "<group>"; };
 		A0BA71421BFDC0850058D92F /* InteractionTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractionTransitionAnimation.h; sourceTree = "<group>"; };
 		A0BA71431BFDC0850058D92F /* InteractionTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InteractionTransitionAnimation.m; sourceTree = "<group>"; };
 		A0BA71441BFDC0850058D92F /* InteractiveTrasitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractiveTrasitionAnimation.h; sourceTree = "<group>"; };
@@ -271,6 +280,26 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A019EED01C1816C200BDDF1E /* ExplainView */ = {
+			isa = PBXGroup;
+			children = (
+				A019EED11C1816E200BDDF1E /* ExplainViewController.h */,
+				A019EED21C1816E200BDDF1E /* ExplainViewController.m */,
+			);
+			path = ExplainView;
+			sourceTree = "<group>";
+		};
+		A019EED41C18205B00BDDF1E /* TipMask */ = {
+			isa = PBXGroup;
+			children = (
+				A019EED51C18205B00BDDF1E /* CMPopTipView.h */,
+				A019EED61C18205B00BDDF1E /* CMPopTipView.m */,
+				A019EED71C18205B00BDDF1E /* TipMaskView.h */,
+				A019EED81C18205B00BDDF1E /* TipMaskView.m */,
+			);
+			path = TipMask;
+			sourceTree = "<group>";
+		};
 		A01D86871BF2D9BE003B28A4 = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				A0D866C81C157E1800158582 /* warm-interlude.mp3 */,
+				A019EED01C1816C200BDDF1E /* ExplainView */,
 				A0C21D8B1C031CE2002F354A /* ResourceView */,
 				A0C21D871C031C13002F354A /* VideoView */,
 				A09F19321C0070500046EC5C /* SlideMain */,
@@ -312,7 +342,7 @@
 				A09F18C01BFEFA440046EC5C /* GlassBallView.h */,
 				A09F18C11BFEFA440046EC5C /* GlassBallView.m */,
 				A09F18C31BFEFA5D0046EC5C /* GlassBall.xib */,
-				A0BA713F1BFC6EA00058D92F /* whalespin.gif */,
+				A019EECE1C17D43100BDDF1E /* whalespinclear.gif */,
 				A01D86A01BF2D9BE003B28A4 /* Main.storyboard */,
 				A01D86A31BF2D9BE003B28A4 /* Images.xcassets */,
 				A01D86A51BF2D9BE003B28A4 /* LaunchScreen.xib */,
@@ -432,6 +462,7 @@
 		A079E5721BFB21050021D502 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				A019EED41C18205B00BDDF1E /* TipMask */,
 				A0BA031D1C1046EB00F5D9DA /* VIPhotoView */,
 				A02DB1991C0EFABF00E8D85F /* ALAssetsLibrary-CustomPhotoAlbum */,
 				A02DB1921C0EEDE800E8D85F /* color */,
@@ -671,10 +702,10 @@
 				A079E4FD1BF9788D0021D502 /* PicCollectionViewCell.xib in Resources */,
 				A0D866C91C157E1800158582 /* warm-interlude.mp3 in Resources */,
 				A09F18CC1C004DE40046EC5C /* LeftMenuTVC.xib in Resources */,
-				A0BA71401BFC6EA00058D92F /* whalespin.gif in Resources */,
 				A09F18C41BFEFA5D0046EC5C /* GlassBall.xib in Resources */,
 				A01D86A71BF2D9BE003B28A4 /* LaunchScreen.xib in Resources */,
 				A0BA03181C0FEFAD00F5D9DA /* ResourceCollectionViewCell.xib in Resources */,
+				A019EECF1C17D43100BDDF1E /* whalespinclear.gif in Resources */,
 				A01D86A41BF2D9BE003B28A4 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -740,6 +771,7 @@
 				A0B7C7671BF57E13003F7C48 /* FacePicker.m in Sources */,
 				A0C21D811C02AC3C002F354A /* AMSlideMenuLeftMenuSegue.m in Sources */,
 				A01D869C1BF2D9BE003B28A4 /* Time.xcdatamodeld in Sources */,
+				A019EEDA1C18205B00BDDF1E /* TipMaskView.m in Sources */,
 				A079E5571BF9BD2A0021D502 /* SDWebImageDownloader.m in Sources */,
 				A09F18C21BFEFA440046EC5C /* GlassBallView.m in Sources */,
 				A0C21D8E1C031CF2002F354A /* ResourceViewController.m in Sources */,
@@ -752,6 +784,8 @@
 				A0BA713E1BFC6E810058D92F /* GIFImageView.m in Sources */,
 				A079E5611BF9BD2A0021D502 /* UIView+WebCacheOperation.m in Sources */,
 				A0C21D861C02AC3C002F354A /* UIViewController+AMSlideMenu.m in Sources */,
+				A019EED31C1816E200BDDF1E /* ExplainViewController.m in Sources */,
+				A019EED91C18205B00BDDF1E /* CMPopTipView.m in Sources */,
 				A0C4A91C1C129842007C0740 /* MBProgressHUD+NJ.m in Sources */,
 				A079E56B1BFB08500021D502 /* PuzzleViewController.m in Sources */,
 				A079E55D1BF9BD2A0021D502 /* UIImage+MultiFormat.m in Sources */,
@@ -858,7 +892,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -896,7 +930,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

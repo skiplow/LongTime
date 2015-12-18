@@ -13,6 +13,7 @@
 #import "EGOCache.h"
 #import "DeleteView.h"
 #import "ResourceInfo.h"
+#import "TipMaskView.h"
 #import "ALAssetsLibrary+CustomPhotoAlbum.h"
 #include<AssetsLibrary/AssetsLibrary.h> 
 #import <MediaPlayer/MediaPlayer.h>
@@ -36,6 +37,7 @@
 @property (nonatomic, strong) UIButton * timeChoseButton;
 @property (nonatomic, strong) UIView * choseView;
 @property (nonatomic, strong) UILabel * timeNameLabel;
+@property (nonatomic, strong) TipMaskView *tipMaskView;
 @end
 
 
@@ -90,6 +92,16 @@
     _deleteView = [[DeleteView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 44, SCREEN_WIDTH, 44)];
     _deleteView.delegate = self;
     [self.view addSubview:_deleteView];
+    
+    /* 增加气泡提示 */
+    //高亮蒙版
+    CGRect tmpFrame = CGRectMake(SCREEN_WIDTH / 2 - 25, 0, 70, 70);
+    _tipMaskView = [[TipMaskView alloc]initWithFrame:tmpFrame message:@"点此可选择时间段" andButtonRect:tmpFrame textColor:nil bubbleColor:nil isCustom:TRUE image:nil];
+    _tipMaskView.popTipView.backgroundColor = [UIColor clearColor];
+    _tipMaskView.popTipView.textColor = [UIColor whiteColor];
+    _tipMaskView.popTipView.borderColor = [UIColor clearColor];
+    _tipMaskView.alpha = 1.0f;
+    [self.view addSubview:_tipMaskView];
 
 }
 
@@ -170,6 +182,9 @@
                                   destructiveButtonTitle:nil
                                   otherButtonTitles:@"近一个月",@"近两个月",@"近三个月",@"近半年",@"全部",nil];
     [actionSheet showInView:self.view];
+    if (_tipMaskView) {
+        [_tipMaskView removeFromSuperview];
+    }
 }
 /**
  *  @author yj, 15-12-02 15:12:17

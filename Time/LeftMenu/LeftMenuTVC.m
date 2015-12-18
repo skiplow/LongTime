@@ -9,6 +9,7 @@
 #import "LeftMenuTVC.h"
 #import "TimeIndexViewController.h"
 #import "ResourceViewController.h"
+#import "ExplainViewController.h"
 
 
 @interface LeftMenuTVC ()
@@ -23,7 +24,7 @@
     // Do any additional setup after loading the view from its nib.
     
     // Initilizing data souce
-    self.tableData = [@[@"首页",@"完成库"] mutableCopy];
+    self.tableData = [@[@"首页",@"完成库",@"说明"] mutableCopy];
     //[self.view setBackgroundColor:[UIColor colorWithRed:255/255.0f green:252/255.0f blue:231/255.0f alpha:1.0f]];
     if ([TimeUtils isDayTime]) {
         [self.view setBackgroundColor:[UIColor LTDayYellowBackGround]];
@@ -73,6 +74,11 @@
     {
         cell.backgroundColor = [UIColor colorWithRed:90/255.0f green:58/255.0f blue:77/255.0f alpha:1.0f];
     }
+    else if(2 == indexPath.row)
+    {
+        cell.backgroundColor = [UIColor colorWithRed:200/255.0f green:200/255.0f blue:200/255.0f alpha:1.0f];
+    }
+    
     
     return cell;
 }
@@ -90,6 +96,11 @@
         case 1:
         {
             rootVC = [[ResourceViewController alloc] init];
+        }
+            break;
+        case 2:
+        {
+            rootVC = [[ExplainViewController alloc] init];
         }
             break;
         

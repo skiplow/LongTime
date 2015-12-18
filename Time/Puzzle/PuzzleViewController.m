@@ -11,6 +11,7 @@
 #import "ImageShowViewController.h"
 #import "ALAssetsLibrary+CustomPhotoAlbum.h"
 #import "MBProgressHUD+NJ.h"
+#import "TipMaskView.h"
 #include<AssetsLibrary/AssetsLibrary.h>
 
 #define ROW_COUNT   2
@@ -40,6 +41,8 @@
     _contentView.contentSize = CGSizeMake(SCREEN_WIDTH, ((_imagesFrame.count / 2) + 1) *200);
     
     [self setViewByImageFrame];
+    
+
     
 }
 
@@ -155,6 +158,20 @@
         imageView.tapDelegate = (id)self;
         [imageView setImageViewData:_imagesFrame[index]];
         [_contentView addSubview:imageView];
+        if(index == 0)
+        {
+            /* 增加气泡提示 */
+            //高亮蒙版
+            CGRect rectNav = self.navigationController.navigationBar.frame;
+            CGRect rectStatus = [[UIApplication sharedApplication] statusBarFrame];
+            CGRect tmpRect = CGRectMake((index % ROW_COUNT)*(SCREEN_WIDTH / 2), (index / ROW_COUNT)*200 + rectNav.size.height + rectStatus.size.height, SCREEN_WIDTH / 2, 200);
+            TipMaskView *tipMaskView = [[TipMaskView alloc]initWithFrame:tmpRect message:@"双击后可拖动图片" andButtonRect:tmpRect textColor:nil bubbleColor:nil isCustom:TRUE image:_imagesFrame[index]];
+            tipMaskView.popTipView.backgroundColor = [UIColor clearColor];
+            tipMaskView.popTipView.textColor = [UIColor whiteColor];
+            tipMaskView.popTipView.borderColor = [UIColor clearColor];
+            tipMaskView.alpha = 1.0f;
+            [self.view addSubview:tipMaskView];
+        }
     }
 }
 
