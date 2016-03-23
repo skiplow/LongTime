@@ -1184,7 +1184,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "a3c8615f-06fc-41f1-8432-d71e93c5d70d";
+				PROVISIONING_PROFILE = "c48b9b83-2061-4a10-ad78-cb39c25d51a1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1223,7 +1223,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "a3c8615f-06fc-41f1-8432-d71e93c5d70d";
+				PROVISIONING_PROFILE = "c48b9b83-2061-4a10-ad78-cb39c25d51a1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1238,7 +1238,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
-				CODE_SIGN_IDENTITY = "iPhone Developer: jian yu (3MT6SMPQY3)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: jian yu (44288HQHUY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: jian yu (44288HQHUY)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1291,7 +1292,7 @@
 					"-lz",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a3c8615f-06fc-41f1-8432-d71e93c5d70d";
+				PROVISIONING_PROFILE = "c48b9b83-2061-4a10-ad78-cb39c25d51a1";
 			};
 			name = Debug;
 		};
@@ -1303,8 +1304,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
-				CODE_SIGN_IDENTITY = "iPhone Developer: jian yu (3MT6SMPQY3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: jian yu (3MT6SMPQY3)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: jian yu (44288HQHUY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: jian yu (44288HQHUY)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1357,7 +1358,7 @@
 					"-lz",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a3c8615f-06fc-41f1-8432-d71e93c5d70d";
+				PROVISIONING_PROFILE = "c48b9b83-2061-4a10-ad78-cb39c25d51a1";
 			};
 			name = Release;
 		};
