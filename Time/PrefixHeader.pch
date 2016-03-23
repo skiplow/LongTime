@@ -18,7 +18,8 @@
 #define AMSlideMenuWithoutStoryboards
 
 #define UMKEY   @"56629a13e0f55a26cc00356d"
-
+#define WX_APPID @"wx0a11441845b9d2c1"
+#define WX_APPSECRET @"107d2692cc3359d6c4e9d5cf9ff1fafd"
 
 #ifdef __OBJC__
 

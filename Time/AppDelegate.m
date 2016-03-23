@@ -8,18 +8,22 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
-//#import "UMSocial.h"
-//#import "UMSocialWechatHandler.h"
-//#import "UMSocialQQHandler.h"
-//#import "UMSocialSinaHandler.h"
-//#import "MobClick.h"
-//#import "UMessage.h"
+#import "UMSocial.h"
+#import "UMSocialWechatHandler.h"
+#import "UMSocialQQHandler.h"
+#import "UMSocialSinaHandler.h"
+#import "MobClick.h"
+#import "UMessage.h"
+#import "WXApi.h"
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
+
+#define UMSYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+
 
 - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -36,6 +40,66 @@
 //    /* 更新提醒 */
 //    [MobClick checkUpdate];
 //    [UMSocialData setAppKey:UMKEY];
+    [WXApi registerApp:WX_APPID withDescription:@"time"];
+    
+    [UMessage startWithAppkey:UMKEY launchOptions:launchOptions];
+    
+    [MobClick startWithAppkey:UMKEY reportPolicy:BATCH   channelId:nil];
+    /* 更新提醒 */
+    [MobClick checkUpdate];
+    [UMSocialData setAppKey:UMKEY];
+    
+    //[UMSocialSinaSSOHandler openNewSinaSSOWithRedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
+    [UMSocialSinaHandler openSSOWithRedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
+    [UMSocialQQHandler setQQWithAppId:@"1105123774" appKey:@"7pz5d5MSOM9DiqQY" url:@"http://www.skiplow.com"];
+    //设置微信AppId、appSecret，分享url
+    [UMSocialWechatHandler setWXAppId:WX_APPID appSecret:WX_APPSECRET url:@"http://www.skiplow.com"];
+    
+    [UMSocialConfig hiddenNotInstallPlatforms:@[UMShareToQQ, UMShareToQzone, UMShareToWechatSession, UMShareToWechatTimeline]];
+    
+    [WXApi registerApp:WX_APPID];
+    
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= _IPHONE80_
+    if(UMSYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0"))
+    {
+        //register remoteNotification types （iOS 8.0及其以上版本）
+        UIMutableUserNotificationAction *action1 = [[UIMutableUserNotificationAction alloc] init];
+        action1.identifier = @"action1_identifier";
+        action1.title=@"Accept";
+        action1.activationMode = UIUserNotificationActivationModeForeground;//当点击的时候启动程序
+        
+        UIMutableUserNotificationAction *action2 = [[UIMutableUserNotificationAction alloc] init];  //第二按钮
+        action2.identifier = @"action2_identifier";
+        action2.title=@"Reject";
+        action2.activationMode = UIUserNotificationActivationModeBackground;//当点击的时候不启动程序，在后台处理
+        action2.authenticationRequired = YES;//需要解锁才能处理，如果action.activationMode = UIUserNotificationActivationModeForeground;则这个属性被忽略；
+        action2.destructive = YES;
+        
+        UIMutableUserNotificationCategory *categorys = [[UIMutableUserNotificationCategory alloc] init];
+        categorys.identifier = @"category1";//这组动作的唯一标示
+        [categorys setActions:@[action1,action2] forContext:(UIUserNotificationActionContextDefault)];
+        
+        UIUserNotificationSettings *userSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge|UIUserNotificationTypeSound|UIUserNotificationTypeAlert
+                                                                                     categories:[NSSet setWithObject:categorys]];
+        [UMessage registerRemoteNotificationAndUserNotificationSettings:userSettings];
+        
+    } else{
+        //register remoteNotification types (iOS 8.0以下)
+        [UMessage registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge
+         |UIRemoteNotificationTypeSound
+         |UIRemoteNotificationTypeAlert];
+    }
+#else
+    
+    //register remoteNotification types (iOS 8.0以下)
+    [UMessage registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge
+     |UIRemoteNotificationTypeSound
+     |UIRemoteNotificationTypeAlert];
+    
+#endif
+    //for log
+    [UMessage setLogEnabled:YES];
+
     
     return YES;
 }

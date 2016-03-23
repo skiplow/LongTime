@@ -8,6 +8,7 @@
 
 #import "ImageShowViewController.h"
 #import "VIPhotoView.h"
+#import "UMSocial.h"
 
 @interface ImageShowViewController ()
 
@@ -38,6 +39,13 @@
     temporaryBarButtonItem.target = self;
     temporaryBarButtonItem.action = @selector(back_main);
     self.navigationItem.leftBarButtonItem = temporaryBarButtonItem;
+    
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 17, 24)];
+    [button setBackgroundImage:[UIImage imageNamed:@"share_button_normal"]forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(shareContent)
+     forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.rightBarButtonItem = barButton;
 
 }
 
@@ -46,6 +54,27 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+
+-(void) shareContent
+{
+    [UMSocialData defaultData].extConfig.qqData.url = @"";
+    [UMSocialData defaultData].extConfig.qzoneData.url = @"";
+    [UMSocialData defaultData].extConfig.qqData.title = @"";
+    [UMSocialData defaultData].extConfig.qzoneData.title = @"";
+    
+    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"";
+    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"";
+    [UMSocialData defaultData].extConfig.wechatSessionData.title = @"";
+    
+    [UMSocialData defaultData].extConfig.wechatTimelineData.title = @"";
+    [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeImage;
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:UMKEY
+                                      shareText:@""
+                                     shareImage:_imageShow
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToQQ,UMShareToQzone,nil]
+                                       delegate:(id)self];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

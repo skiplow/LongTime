@@ -95,6 +95,8 @@
     _startButton.titleLabel.font = [UIFont fontWithName:@"MarkerFelt-Wide" size:16];
     [_startButton addTarget:self action:@selector(startPicHandle) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_startButton];
+
+
     
     
     /* 侧边栏按钮 */
@@ -173,8 +175,9 @@
 //    [_timeLabel removeFromSuperview];
 //    self.view.backgroundColor = [UIColor whiteColor];
     
-    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height - 100)];
+    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [_imageView setContentMode:UIViewContentModeScaleAspectFill];
+    [_imageView setBackgroundColor:[UIColor blackColor]];
     [self.view addSubview:_imageView];
     
     
@@ -240,7 +243,7 @@
 
 -(void) doPickImage:(NSDate*) nweDate
 {
-    [FacePicker pickFaceFromPhotoAlbum:@"Camera Roll" NewDate:newDate outPutArry:_imagesurl
+    [FacePicker pickFaceFromPhotoAlbum:@"相机胶卷" NewDate:newDate outPutArry:_imagesurl
                        outPutImageArry:_imageFrames  animateTransitions:NO withPicPicked:^(UIImage *image) {
         int x =  arc4random() % (int)SCREEN_WIDTH;
         int y = 0;

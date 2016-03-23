@@ -111,7 +111,7 @@
 //    b = 0;
 //    jia = NO;
     _currentLinePointY = self.frame.size.height*(1-progress);
-    _currentWaterColor = [UIColor colorWithRed:0/255.0f green:202/255.0f blue:194/255.0f alpha:1.0];
+    _currentWaterColor = [UIColor colorWithRed:0/255.0f green:191/255.0f blue:255/255.0f alpha:1.0];
     //_currentLinePointY = 250;
     if(nil == _theTimer)
     {

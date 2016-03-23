@@ -17,6 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"说明";
+    if ([TimeUtils isDayTime]) {
+        [self.view setBackgroundColor:[UIColor LTDayYellowBackGround]];
+    }
+    else
+    {
+        [self.view setBackgroundColor:[UIColor LTNightPurpleBackGround]];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

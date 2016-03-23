@@ -41,6 +41,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"完成库";
     if ([TimeUtils isDayTime]) {
         [self.view setBackgroundColor:[UIColor LTDayYellowBackGround]];
     }
@@ -105,8 +106,8 @@
     MPMoviePlayerViewController *playerController = [[MPMoviePlayerViewController alloc] initWithContentURL:fileURL];
     [playerController.view setFrame:self.view.bounds];
     [self presentMoviePlayerViewControllerAnimated:playerController];
-    [playerController.moviePlayer prepareToPlay];
-    [playerController.moviePlayer play];
+    //[playerController.moviePlayer prepareToPlay];
+    [playerController.moviePlayer stop];
     [self.view addSubview:playerController.view];
 }
 

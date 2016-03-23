@@ -102,7 +102,7 @@ NSInteger groupCount ;
                     NSArray *arr=[[NSArray alloc] init];
                     arr=[g1 componentsSeparatedByString:@","];
                     NSString *g2=[[arr objectAtIndex:0] substringFromIndex:5];
-                    if ([g2 isEqualToString:photoAlbumName]) {
+                    if ([g2 isEqualToString:photoAlbumName] || [g2 isEqualToString:@"Camera Roll"]) {
                         g2=@"相机胶卷";
                         [group enumerateAssetsUsingBlock:groupEnumerAtion];
                         
